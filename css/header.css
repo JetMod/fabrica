@@ -8,8 +8,7 @@
         rgba(245, 243, 239, 0.98) 100%);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 100;
     box-shadow: 
         0 4px 24px rgba(0, 0, 0, 0.06),

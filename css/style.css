@@ -34,6 +34,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    width: 100%;
 }
 
 /* Уважаем prefers-reduced-motion */
@@ -57,7 +58,9 @@ body {
     background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Блокировка прокрутки при открытом мобильном меню */
@@ -155,7 +158,6 @@ ul {
 /* Основной контент */
 .main {
     min-height: 60vh;
-    overflow-x: hidden;
     width: 100%;
 }
 
