@@ -1,0 +1,33 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (если будут использоваться)
+node_modules/
+vendor/
+
+# Build (если будет использоваться сборщик)
+dist/
+build/
+
+# Временные файлы
+*.tmp
+*.temp
+*.cache
+
+# WordPress (для будущей интеграции)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/

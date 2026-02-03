@@ -1,0 +1,230 @@
+/* ===================================
+   Проекты
+   =================================== */
+
+.projects {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-background);
+}
+
+/* Заголовок секции */
+.projects__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.projects__title {
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.projects__subtitle {
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+/* Сетка проектов */
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Карточка проекта */
+.projects__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Разные размеры карточек */
+.projects__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.projects__item--wide {
+    grid-column: span 2;
+}
+
+.projects__item--tall {
+    grid-row: span 2;
+}
+
+/* Изображение */
+.projects__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.projects__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projects__item:hover .projects__img {
+    transform: scale(1.1);
+}
+
+/* Оверлей */
+.projects__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(30, 30, 30, 0) 0%,
+        rgba(30, 30, 30, 0.8) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projects__item:hover .projects__overlay {
+    opacity: 1;
+}
+
+/* Контент карточки */
+.projects__content {
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.projects__item:hover .projects__content {
+    transform: translateY(0);
+}
+
+.projects__name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.projects__category {
+    font-size: 14px;
+    color: var(--color-accent);
+    margin: 0;
+}
+
+/* Футер секции */
+.projects__footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 240px;
+        gap: var(--spacing-sm);
+    }
+    
+    .projects__item--large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .projects__item--wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+    
+    .projects__item--large,
+    .projects__item--wide {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .projects__item--tall {
+        grid-row: span 1;
+    }
+    
+    /* Показываем оверлей всегда на мобильных */
+    .projects__overlay {
+        opacity: 1;
+        background: linear-gradient(
+            180deg,
+            rgba(30, 30, 30, 0) 0%,
+            rgba(30, 30, 30, 0.7) 100%
+        );
+    }
+    
+    .projects__content {
+        transform: translateY(0);
+    }
+    
+    .projects__name {
+        font-size: 16px;
+    }
+    
+    .projects__category {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects__grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 240px;
+    }
+    
+    .projects__item--large,
+    .projects__item--wide {
+        grid-column: span 1;
+    }
+}
+
+/* Анимация появления карточек */
+@keyframes projectsFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.projects__item {
+    animation: projectsFadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.projects__item:nth-child(1) { animation-delay: 0.05s; }
+.projects__item:nth-child(2) { animation-delay: 0.1s; }
+.projects__item:nth-child(3) { animation-delay: 0.15s; }
+.projects__item:nth-child(4) { animation-delay: 0.2s; }
+.projects__item:nth-child(5) { animation-delay: 0.25s; }
+.projects__item:nth-child(6) { animation-delay: 0.3s; }
+.projects__item:nth-child(7) { animation-delay: 0.35s; }
+.projects__item:nth-child(8) { animation-delay: 0.4s; }

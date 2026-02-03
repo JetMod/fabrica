@@ -1,0 +1,422 @@
+/* ===================================
+   О компании
+   =================================== */
+
+.about {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративный фоновый элемент */
+.about::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(198, 161, 91, 0.05), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Основной контент */
+.about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-bottom: var(--spacing-xxl);
+    position: relative;
+    z-index: 1;
+}
+
+.about__content {
+    max-width: 540px;
+    position: relative;
+}
+
+/* Декоративный акцент для контента */
+.about__content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-accent), transparent);
+    border-radius: 2px;
+}
+
+.about__title {
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+/* Декоративное подчеркивание заголовка */
+.about__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+}
+
+.about__subtitle {
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    letter-spacing: 0.5px;
+}
+
+.about__text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    opacity: 0.85;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Декоративный маркер для текста */
+.about__text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+}
+
+.about__button {
+    margin-top: var(--spacing-lg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about__button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.about__button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Изображение */
+.about__image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__image:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    transform: translateY(-8px);
+}
+
+/* Декоративная рамка на изображении */
+.about__image::before {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border: 2px solid rgba(198, 161, 91, 0.5);
+    border-radius: 8px;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.about__image:hover::before {
+    opacity: 1;
+}
+
+/* Градиентный оверлей */
+.about__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(198, 161, 91, 0.1) 0%,
+        transparent 50%,
+        rgba(30, 30, 30, 0.15) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.about__image:hover::after {
+    opacity: 1;
+}
+
+.about__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__image:hover .about__img {
+    transform: scale(1.08);
+}
+
+/* Ценности */
+.about__values {
+    margin-top: var(--spacing-xxl);
+}
+
+.about__values-title {
+    font-size: clamp(28px, 3.5vw, 36px);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+/* Декоративный элемент под заголовком */
+.about__values-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+    border-radius: 2px;
+}
+
+.about__values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Карточка ценности */
+.about__value-card {
+    padding: var(--spacing-lg);
+    background-color: var(--color-background);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+/* Декоративный элемент при наведении */
+.about__value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-accent), rgba(198, 161, 91, 0.3));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__value-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(198, 161, 91, 0.2);
+    background-color: var(--color-white);
+}
+
+.about__value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.about__value-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-white), var(--color-background));
+    border-radius: 50%;
+    color: var(--color-accent);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(198, 161, 91, 0.15);
+}
+
+/* Декоративное кольцо вокруг иконки */
+.about__value-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__value-card:hover .about__value-icon {
+    background: linear-gradient(135deg, var(--color-accent), rgba(198, 161, 91, 0.8));
+    color: var(--color-white);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(198, 161, 91, 0.4);
+}
+
+.about__value-card:hover .about__value-icon::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.about__value-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    transition: color 0.3s ease;
+}
+
+.about__value-card:hover .about__value-name {
+    color: var(--color-accent);
+}
+
+.about__value-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-gray);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.about__value-card:hover .about__value-text {
+    color: var(--color-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .about__inner {
+        gap: var(--spacing-lg);
+    }
+    
+    .about__values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .about::before {
+        width: 250px;
+        height: 250px;
+        top: -50px;
+        right: -50px;
+    }
+    
+    .about__inner {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .about__content {
+        max-width: 100%;
+        order: 2;
+    }
+    
+    .about__content::before {
+        left: 0;
+        top: -15px;
+        width: 40px;
+    }
+    
+    .about__image {
+        order: 1;
+    }
+    
+    .about__text {
+        font-size: 15px;
+        padding-left: 16px;
+    }
+    
+    .about__values {
+        margin-top: var(--spacing-xl);
+    }
+    
+    .about__values-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .about__value-card {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .about__title::after {
+        width: 50px;
+        height: 2px;
+    }
+    
+    .about__text {
+        padding-left: 12px;
+    }
+    
+    .about__text::before {
+        width: 3px;
+        height: 3px;
+    }
+    
+    .about__value-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .about__value-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .about__value-icon::before {
+        inset: -3px;
+        border-width: 1.5px;
+    }
+}
