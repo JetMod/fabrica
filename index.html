@@ -20,20 +20,7 @@
     <link rel="preload" as="video" href="video/1.MP4">
     
     <!-- Стили -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/featured-products.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/catalog.css">
-    <link rel="stylesheet" href="css/benefits.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/floating-buttons.css">
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <!-- Header -->
@@ -199,9 +186,9 @@
     </header>
 
     <!-- Основной контент -->
-    <main class="main">
+    <main class="main" role="main" id="main-content">
         <!-- Hero секция -->
-        <section class="hero">
+        <section class="hero" aria-label="Промо-слайдер с акциями и новинками">
             <div class="hero__slider">
                 <!-- Слайд 1 - Акция -->
                 <div class="hero__slide active">
@@ -317,12 +304,12 @@
         </section>
 
         <!-- О компании -->
-        <section class="about animate-on-scroll" id="about">
+        <section class="about animate-on-scroll" id="about" aria-labelledby="about-title">
             <div class="container">
                 <div class="about__inner">
                     <!-- Текстовая часть -->
                     <div class="about__content">
-                        <h2 class="about__title">ФАБРИКА интерьера</h2>
+                        <h2 class="about__title" id="about-title">ФАБРИКА интерьера</h2>
                         <p class="about__subtitle">Производство полного цикла</p>
                         <p class="about__text">
                             Мы создаём интерьерные решения под ключ — от проектирования до монтажа. Работаем с домами, отелями, ресторанами и общественными пространствами.
@@ -392,7 +379,7 @@
         </section>
 
         <!-- Каталог популярных товаров -->
-        <section class="featured-products animate-on-scroll">
+        <section class="featured-products animate-on-scroll" aria-label="Популярные товары - скидки и новинки">
             <div class="container">
                 <!-- Заголовок с табами -->
                 <div class="featured-products__header">
@@ -811,10 +798,10 @@
      
 
         <!-- Каталог -->
-        <section class="catalog animate-on-scroll" id="catalog">
+        <section class="catalog animate-on-scroll" id="catalog" aria-labelledby="catalog-title">
             <div class="container">
                 <div class="catalog__header">
-                    <h2 class="catalog__title">Наши коллекции</h2>
+                    <h2 class="catalog__title" id="catalog-title">Наши коллекции</h2>
                     <p class="catalog__subtitle">Откройте для себя мир премиальных интерьерных решений</p>
                 </div>
 
@@ -942,10 +929,10 @@
 
 
            <!-- Услуги -->
-           <section class="services animate-on-scroll">
+           <section class="services animate-on-scroll" aria-labelledby="services-title">
             <div class="container">
                 <div class="services__header">
-                    <h2 class="services__title">Фабрика также предоставляет услуги</h2>
+                    <h2 class="services__title" id="services-title">Фабрика также предоставляет услуги</h2>
                     <p class="services__subtitle">Комплексный подход к реализации ваших интерьерных проектов</p>
                 </div>
 
@@ -1095,10 +1082,10 @@
         </section>
 
         <!-- Проекты -->
-        <section class="projects animate-on-scroll" id="projects">
+        <section class="projects animate-on-scroll" id="projects" aria-labelledby="projects-title">
             <div class="container">
                 <div class="projects__header">
-                    <h2 class="projects__title">Наши проекты</h2>
+                    <h2 class="projects__title" id="projects-title">Наши проекты</h2>
                     <p class="projects__subtitle">Реализованные интерьерные решения для разных пространств</p>
                 </div>
 
@@ -1205,7 +1192,7 @@
 
         <!-- Форма обратной связи -->
         <!-- Премиальная форма заявки -->
-        <section class="contact animate-on-scroll" id="contact-form">
+        <section class="contact animate-on-scroll" id="contact-form" aria-labelledby="contact-title">
             <div class="contact__background">
                 <div class="contact__pattern"></div>
             </div>
@@ -1213,7 +1200,7 @@
                 <div class="contact__premium">
                     <div class="contact__header">
                         <span class="contact__accent">Начните свой проект</span>
-                        <h2 class="contact__title">Получите персональную консультацию</h2>
+                        <h2 class="contact__title" id="contact-title">Получите персональную консультацию</h2>
                         <p class="contact__subtitle">Оставьте заявку, и наш эксперт свяжется с вами в течение 15 минут</p>
                     </div>
 
@@ -1291,10 +1278,10 @@
         </section>
 
         <!-- Блог / Статьи -->
-        <section class="blog animate-on-scroll" id="blog">
+        <section class="blog animate-on-scroll" id="blog" aria-labelledby="blog-title">
             <div class="container">
                 <div class="blog__header">
-                    <h2 class="blog__title">Вам будет интересно</h2>
+                    <h2 class="blog__title" id="blog-title">Вам будет интересно</h2>
                     <a href="#blog" class="blog__view-all">
                         Все статьи
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1389,7 +1376,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" id="contacts">
+    <footer class="footer" id="contacts" role="contentinfo">
         <!-- Верхняя секция с карточками -->
         <div class="footer__cta-section">
             <div class="container">
@@ -1622,7 +1609,10 @@
         </button>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- JavaScript - Модульная структура -->
+    <script type="module" src="js/app.js"></script>
+    
+    <!-- Fallback для старых браузеров (без модулей) -->
+    <script nomodule src="js/main.js" defer></script>
 </body>
 </html>
