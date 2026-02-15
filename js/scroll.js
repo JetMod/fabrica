@@ -76,6 +76,11 @@ export function initSmoothScroll() {
                 return;
             }
             
+            // Игнорируем ссылки на contact-form (для модального окна)
+            if (href === '#contact-form') {
+                return;
+            }
+            
             const target = document.querySelector(href);
             
             if (target) {

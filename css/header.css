@@ -808,6 +808,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     height: 100vh;
     background: linear-gradient(135deg, 
         rgba(30, 30, 30, 0.6) 0%, 
@@ -818,18 +819,22 @@
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 99;
+    display: none;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .header__mobile-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 /* Мобильное меню */
 .header__mobile-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 100%;
     max-width: 360px;
     height: 100vh;
@@ -842,10 +847,38 @@
         -8px 0 32px rgba(0, 0, 0, 0.15),
         -2px 0 8px rgba(198, 161, 91, 0.15);
     padding: 80px 24px 24px;
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s, opacity 0.4s;
     z-index: 100;
     overflow-y: auto;
+    overflow-x: hidden;
     border-left: 1px solid rgba(198, 161, 91, 0.2);
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    /* Скрываем меню с помощью transform вместо right для предотвращения горизонтального скролла */
+    transform: translateX(100%);
+}
+
+/* Показываем мобильное меню только на мобильных устройствах (до 768px) */
+@media (max-width: 768px) {
+    .header__mobile-menu {
+        display: block;
+        /* Меню скрыто по умолчанию (transform: translateX(100%)) и показывается только с классом .active */
+        transform: translateX(100%) !important;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    /* Меню видно только с классом .active */
+    .header__mobile-menu.active {
+        transform: translateX(0) !important;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .header__mobile-overlay {
+        display: block;
+    }
 }
 
 .header__mobile-menu::before {
@@ -862,8 +895,18 @@
     opacity: 0.6;
 }
 
+/* Меню открывается только с классом .active */
 .header__mobile-menu.active {
-    right: 0;
+    transform: translateX(0) !important;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Убеждаемся, что меню скрыто без класса .active */
+.header__mobile-menu:not(.active) {
+    transform: translateX(100%) !important;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .header__mobile-search {
@@ -1100,6 +1143,26 @@
         display: flex;
     }
     
+    /* Показываем мобильное меню только на мобильных устройствах */
+    /* Меню скрыто по умолчанию (transform: translateX(100%)) и показывается только с классом .active */
+    .header__mobile-menu {
+        display: block;
+        transform: translateX(100%) !important; /* Убеждаемся, что меню скрыто по умолчанию */
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    /* Меню видно только с классом .active */
+    .header__mobile-menu.active {
+        transform: translateX(0) !important;
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .header__mobile-overlay {
+        display: block;
+    }
+    
     /* Скрываем нижнюю навигацию */
     .header__bottom {
         display: none;
@@ -1121,6 +1184,21 @@
     
     .header__logo-img {
         height: 40px;
+    }
+}
+
+/* Скрываем мобильное меню на десктопе */
+@media (min-width: 769px) {
+    .header__mobile-menu {
+        display: none !important;
+    }
+    
+    .header__mobile-overlay {
+        display: none !important;
+    }
+    
+    .header__burger {
+        display: none !important;
     }
 }
 

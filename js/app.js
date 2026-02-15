@@ -11,6 +11,8 @@ import { initChatWidget } from './chat-widget.js';
 import { initPhoneMask, initContactForm } from './form-validation.js';
 import { initScrollTop, initScrollAnimations, initSmoothScroll } from './scroll.js';
 import { initFeaturedProductsSlider, initFeaturedProductsTabs, initProductCards } from './products.js';
+import { initCallbackModal } from './callback-modal.js';
+import { initChatModal } from './chat-modal.js';
 
 /**
  * Инициализация всех компонентов при загрузке страницы
@@ -22,8 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroSlider();
     initServicesSlider();
     initChatWidget();
+    initChatModal();
     initContactForm();
     initPhoneMask();
+    initCallbackModal();
     initScrollTop();
     initScrollAnimations();
     initSmoothScroll();

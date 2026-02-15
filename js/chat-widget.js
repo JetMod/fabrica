@@ -13,13 +13,8 @@ export function initChatWidget() {
     
     if (!chatWidget || !chatButton || !chatClose || !chatCollapsed) return;
     
-    // Открытие чата (переход к форме обратной связи)
-    chatButton.addEventListener('click', function() {
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
+    // Открытие чата теперь обрабатывается в chat-modal.js
+    // Оставляем пустым, чтобы не конфликтовать с модальным окном
     
     // Сворачивание виджета при клике на крестик
     chatClose.addEventListener('click', function(e) {

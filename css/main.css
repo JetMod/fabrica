@@ -19,6 +19,11 @@
 
 /* UI элементы */
 @import url('floating-buttons.css');
+@import url('callback-modal.css');
+@import url('chat-modal.css');
+
+/* Страницы */
+@import url('office.css');
 
 /* Анимации */
 @import url('animations.css');

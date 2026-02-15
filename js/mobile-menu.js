@@ -13,6 +13,14 @@ export function initMobileMenu() {
     
     if (!burger || !mobileMenu) return;
     
+    // Гарантируем, что меню закрыто при загрузке страницы
+    burger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    if (mobileOverlay) {
+        mobileOverlay.classList.remove('active');
+    }
+    document.body.classList.remove('menu-open');
+    
     // Функция закрытия меню
     function closeMenu() {
         burger.classList.remove('active');
