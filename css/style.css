@@ -137,7 +137,7 @@ ul {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
     text-decoration: none;
 }
 
@@ -152,6 +152,10 @@ ul {
     box-shadow: 0 4px 12px rgba(198, 161, 91, 0.3);
 }
 
+.button--primary:active {
+    transform: translateY(0) scale(0.98);
+}
+
 .button--secondary {
     background-color: transparent;
     color: var(--color-accent);
@@ -161,6 +165,11 @@ ul {
 .button--secondary:hover {
     background-color: var(--color-accent);
     color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.button--secondary:active {
+    transform: translateY(0) scale(0.98);
 }
 
 /* Основной контент */

@@ -13,6 +13,7 @@
 @import url('services.css');
 @import url('catalog.css');
 @import url('projects.css');
+@import url('wholesale.css');
 @import url('blog.css');
 @import url('contact.css');
 @import url('footer.css');
@@ -24,6 +25,14 @@
 
 /* Страницы */
 @import url('office.css');
+@import url('designers.css');
+@import url('business.css');
+@import url('delivery.css');
+@import url('project-single.css');
+@import url('catalog-page.css');
+@import url('category.css');
+@import url('product-single.css');
+@import url('blog-single.css');
 
 /* Анимации */
 @import url('animations.css');

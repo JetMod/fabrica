@@ -105,14 +105,21 @@
     width: 100%;
 }
 
+.header__top-link--active {
+    color: var(--color-accent);
+}
+
+.header__top-link--active::before {
+    width: 100%;
+}
+
 .header__top-right {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-.header__top-login,
-.header__top-cart {
+.header__top-catalog {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -125,8 +132,7 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header__top-login:hover,
-.header__top-cart:hover {
+.header__top-catalog:hover {
     background: linear-gradient(135deg, 
         rgba(198, 161, 91, 0.12) 0%, 
         rgba(198, 161, 91, 0.15) 100%);
@@ -135,8 +141,7 @@
     box-shadow: 0 4px 12px rgba(198, 161, 91, 0.2);
 }
 
-.header__top-login svg,
-.header__top-cart svg {
+.header__top-catalog svg {
     filter: drop-shadow(0 1px 2px rgba(198, 161, 91, 0.2));
     width: 14px;
     height: 14px;
@@ -1305,13 +1310,11 @@
     }
 }
 
-.header__top-login svg,
-.header__top-cart svg {
+.header__top-catalog svg {
     transition: all 0.3s ease;
 }
 
-.header__top-login:hover svg,
-.header__top-cart:hover svg {
+.header__top-catalog:hover svg {
     animation: iconPulse 0.6s ease-in-out;
     filter: drop-shadow(0 2px 8px rgba(198, 161, 91, 0.4));
 }
@@ -1350,44 +1353,6 @@
     }
 }
 
-/* Улучшенный badge для корзины */
-.header__top-cart {
-    position: relative;
-}
-
-/* Badge для товаров в корзине */
-.header__top-cart[data-count]:not([data-count="0"])::after {
-    content: attr(data-count);
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    min-width: 18px;
-    height: 18px;
-    padding: 0 5px;
-    background: linear-gradient(135deg, 
-        #E74C3C 0%, 
-        #C0392B 100%);
-    color: white;
-    border-radius: 10px;
-    font-size: 10px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 2px 8px rgba(231, 76, 60, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    animation: cartBadgePulse 2s ease-in-out infinite;
-}
-
-@keyframes cartBadgePulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
 
 /* Поддержка для браузеров без backdrop-filter */
 @supports not (backdrop-filter: blur(20px)) {

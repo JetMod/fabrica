@@ -226,6 +226,32 @@
     gap: var(--spacing-lg);
 }
 
+/* Каскадное появление карточек ценностей при скролле */
+.about.animate-on-scroll:not(.animated) .about__value-card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.about.animate-on-scroll.animated .about__value-card {
+    animation: aboutValueFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.about.animate-on-scroll.animated .about__value-card:nth-child(1) { animation-delay: 0.1s; }
+.about.animate-on-scroll.animated .about__value-card:nth-child(2) { animation-delay: 0.2s; }
+.about.animate-on-scroll.animated .about__value-card:nth-child(3) { animation-delay: 0.3s; }
+.about.animate-on-scroll.animated .about__value-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes aboutValueFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Карточка ценности */
 .about__value-card {
     padding: var(--spacing-lg);

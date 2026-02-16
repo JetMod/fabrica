@@ -232,21 +232,14 @@ export function initProductCards() {
         });
     });
     
-    // Кнопки корзины
-    const cartButtons = document.querySelectorAll('.product-card__cart');
-    
-    cartButtons.forEach(function(button) {
+    // Кнопки «Узнать цену» — открывают модальное окно обратного звонка (data-callback-modal)
+    const requestButtons = document.querySelectorAll('.product-card__request');
+    requestButtons.forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Анимация добавления в корзину
             this.style.transform = 'scale(0.9)';
-            setTimeout(function() {
-                button.style.transform = '';
-            }, 200);
-            
-            // Здесь можно добавить логику добавления в корзину
-            console.log('Товар добавлен в корзину');
+            setTimeout(function() { button.style.transform = ''; }, 200);
+            // Открытие модалки обратного звонка обрабатывается в callback-modal.js по [data-callback-modal]
         });
     });
 }

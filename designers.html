@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Партнерство с дизайнерами интерьеров — выгодные условия сотрудничества от ФАБРИКА интерьера">
+    <meta name="keywords" content="партнерство с дизайнерами, сотрудничество дизайнеров, дизайнерская мебель для дизайнеров">
+    <meta name="theme-color" content="#F5F3EF">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Партнерство с дизайнерами — ФАБРИКА интерьера">
+    <meta property="og:description" content="Выгодные условия сотрудничества для дизайнеров интерьеров">
+    <meta property="og:type" content="website">
+    
+    <title>Партнерство с дизайнерами — ФАБРИКА интерьера</title>
+    
+    <!-- Иконка для браузера (логотип) -->
+    <link rel="icon" href="img/logo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="img/logo.webp">
+    
+    <!-- Preload критических ресурсов -->
+    <link rel="preload" as="image" href="img/logo.webp">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/designers.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Верхний хедер -->
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-inner">
+                    <!-- Верхнее меню -->
+                    <nav class="header__top-nav">
+                        <a href="office.html" class="header__top-link">Офис</a>
+                        <a href="designers.html" class="header__top-link">Дизайнерам</a>
+                        <a href="business.html" class="header__top-link">Бизнесу</a>
+                        <a href="delivery.html" class="header__top-link">Доставка</a>
+                        <a href="projects.html" class="header__top-link">Проекты</a>
+                    </nav>
+
+                    <!-- Правая часть -->
+                    <div class="header__top-right">
+                        <a href="catalog.html" class="header__top-link header__top-catalog">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 2h3v3H2V2zm5 0h3v3H7V2zm5 0h3v3h-3V2zM2 7h3v3H2V7zm5 0h3v3H7V7zm5 0h3v3h-3V7zM2 12h3v3H2v-3zm5 0h3v3H7v-3zm5 0h3v3h-3v-3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Каталог
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Средний хедер -->
+        <div class="header__middle">
+            <div class="container">
+                <div class="header__middle-inner">
+                    <!-- Логотип + слоган -->
+                    <div class="header__branding">
+                        <a href="index.html" class="header__logo">
+                            <img src="img/logo.webp" alt="ФАБРИКА интерьера" class="header__logo-img">
+                        </a>
+                        <p class="header__tagline">Дизайнерская мебель<br>для дома, работы и отдыха</p>
+                    </div>
+
+                    <!-- Поиск -->
+                    <div class="header__search">
+                        <input type="text" placeholder="Поиск" class="header__search-input">
+                        <button class="header__search-button" aria-label="Искать">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 17A8 8 0 109 1a8 8 0 000 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Контакты + кнопка -->
+                    <div class="header__right">
+                        <div class="header__contacts-group">
+                            <div class="header__work-time header__work-time--right">
+                                <div class="header__work-time-header">
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 4v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    Режим работы:
+                                </div>
+                                <div class="header__work-time-value">ежедневно, 10:00–19:00</div>
+                            </div>
+                            <a href="tel:+79785977442" class="header__phone">
+                                <span class="header__phone-label">Звоните сейчас</span>
+                                <span class="header__phone-number">+7 (978) 597-74-42</span>
+                            </a>
+                        </div>
+                        <a href="#contact-form" class="header__cta-button">Заказать звонок</a>
+                    </div>
+
+                    <!-- Бургер меню (мобильная версия) -->
+                    <button class="header__burger" aria-label="Открыть меню">
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Нижний хедер (основная навигация) -->
+        <div class="header__bottom">
+            <div class="container">
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li class="header__menu-item">
+                            <a href="index.html#new" class="header__menu-link">Новое</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Мебель</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Гостинная</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Столовая</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Спальна</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Ванна</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Декор</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">На улице</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="office.html" class="header__menu-link">Офис</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="catalog.html" class="header__menu-link">Horeca</a>
+                        </li>
+                       
+                        <li class="header__menu-item">
+                            <a href="index.html#sale" class="header__menu-link header__menu-link--accent">Акции</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Overlay для мобильного меню -->
+        <div class="header__mobile-overlay"></div>
+
+        <!-- Мобильное меню -->
+        <div class="header__mobile-menu">
+            <div class="header__mobile-search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__search-icon">
+                    <path d="M9 17A8 8 0 109 1a8 8 0 000 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" placeholder="Поиск" class="header__search-input">
+            </div>
+            <nav class="header__mobile-nav">
+                <a href="index.html#new" class="header__mobile-link">Новое</a>
+                <a href="catalog.html" class="header__mobile-link">Мебель</a>
+                <a href="catalog.html" class="header__mobile-link">Освещение</a>
+                <a href="catalog.html" class="header__mobile-link">Декор + Посуда</a>
+                <a href="catalog.html" class="header__mobile-link">Текстиль</a>
+                <a href="catalog.html" class="header__mobile-link">Напольные покрытия</a>
+                <a href="catalog.html" class="header__mobile-link">Стены + Обои</a>
+                <a href="catalog.html" class="header__mobile-link">Панели</a>
+                <a href="catalog.html" class="header__mobile-link">Horeca</a>
+                <a href="office.html" class="header__mobile-link">Офис</a>
+                <a href="index.html#sale" class="header__mobile-link header__mobile-link--accent">Акции</a>
+                <a href="index.html#about" class="header__mobile-link">О компании</a>
+                <a href="index.html#production" class="header__mobile-link">Производство</a>
+                <a href="designers.html" class="header__mobile-link">Дизайнерам</a>
+                <a href="business.html" class="header__mobile-link">Бизнесу</a>
+                <a href="delivery.html" class="header__mobile-link">Доставка</a>
+                <a href="projects.html" class="header__mobile-link">Проекты</a>
+                <a href="index.html#contacts" class="header__mobile-link">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero секция -->
+        <section class="designers-hero">
+            <div class="designers-hero__background">
+                <div class="designers-hero__gradient designers-hero__gradient--1"></div>
+                <div class="designers-hero__gradient designers-hero__gradient--2"></div>
+                <div class="designers-hero__pattern"></div>
+                <div class="designers-hero__shapes">
+                    <div class="designers-hero__shape designers-hero__shape--1"></div>
+                    <div class="designers-hero__shape designers-hero__shape--2"></div>
+                    <div class="designers-hero__shape designers-hero__shape--3"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="designers-hero__inner">
+                    <div class="designers-hero__content">
+                        <div class="designers-hero__badge">
+                            <span class="designers-hero__badge-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </span>
+                            Партнерство
+                        </div>
+                        <h1 class="designers-hero__title">
+                            <span class="designers-hero__title-line">Создавайте</span>
+                            <span class="designers-hero__title-line designers-hero__title-line--accent">вместе с нами</span>
+                        </h1>
+                        <p class="designers-hero__subtitle">Выгодные условия сотрудничества для дизайнеров интерьеров. Премиальная мебель, индивидуальные решения и профессиональная поддержка на каждом этапе проекта.</p>
+                        <div class="designers-hero__actions">
+                            <a href="#contact-form" class="designers-hero__button designers-hero__button--primary">
+                                <span>Стать партнером</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                            <a href="#benefits" class="designers-hero__button designers-hero__button--secondary">
+                                <span>Узнать больше</span>
+                            </a>
+                        </div>
+                        <div class="designers-hero__stats">
+                            <div class="designers-hero__stat">
+                                <div class="designers-hero__stat-number">200+</div>
+                                <div class="designers-hero__stat-label">дизайнеров-партнеров</div>
+                            </div>
+                            <div class="designers-hero__stat">
+                                <div class="designers-hero__stat-number">15%</div>
+                                <div class="designers-hero__stat-label">скидка партнерам</div>
+                            </div>
+                            <div class="designers-hero__stat">
+                                <div class="designers-hero__stat-number">24/7</div>
+                                <div class="designers-hero__stat-label">поддержка</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="designers-hero__visual">
+                        <div class="designers-hero__image-wrapper">
+                            <div class="designers-hero__image-placeholder">
+                                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="designers-hero__decorative">
+                            <div class="designers-hero__decorative-item designers-hero__decorative-item--1"></div>
+                            <div class="designers-hero__decorative-item designers-hero__decorative-item--2"></div>
+                            <div class="designers-hero__decorative-item designers-hero__decorative-item--3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="designers-hero__scroll-indicator">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="designers-benefits animate-on-scroll" id="benefits">
+            <div class="container">
+                <div class="designers-benefits__header">
+                    <div class="designers-benefits__badge">Преимущества</div>
+                    <h2 class="designers-benefits__title">Почему дизайнеры выбирают нас</h2>
+                    <p class="designers-benefits__subtitle">Мы создали экосистему для успешного сотрудничества</p>
+                </div>
+                <div class="designers-benefits__grid">
+                    <div class="designers-benefit">
+                        <div class="designers-benefit__icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="designers-benefit__title">Выгодные цены</h3>
+                        <p class="designers-benefit__text">Специальные партнерские цены до 15% ниже розничных. Прозрачное ценообразование без скрытых комиссий.</p>
+                    </div>
+                    <div class="designers-benefit">
+                        <div class="designers-benefit__icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                        </div>
+                        <h3 class="designers-benefit__title">Индивидуальный подход</h3>
+                        <p class="designers-benefit__text">Каждый проект уникален. Мы адаптируем решения под ваши задачи и создаем мебель по вашим эскизам.</p>
+                    </div>
+                    <div class="designers-benefit">
+                        <div class="designers-benefit__icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="designers-benefit__title">Быстрые сроки</h3>
+                        <p class="designers-benefit__text">Оптимизированное производство позволяет выполнять заказы в сжатые сроки без потери качества.</p>
+                    </div>
+                    <div class="designers-benefit">
+                        <div class="designers-benefit__icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3 class="designers-benefit__title">Техническая поддержка</h3>
+                        <p class="designers-benefit__text">Персональный менеджер, помощь в подборе материалов, консультации по проектированию и монтажу.</p>
+                    </div>
+                    <div class="designers-benefit">
+                        <div class="designers-benefit__icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="designers-benefit__title">Гарантия качества</h3>
+                        <p class="designers-benefit__text">Расширенная гарантия на всю продукцию и сервисное обслуживание на протяжении всего срока эксплуатации.</p>
+                    </div>
+                    <div class="designers-benefit">
+                        <div class="designers-benefit__icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="designers-benefit__title">Маркетинговая поддержка</h3>
+                        <p class="designers-benefit__text">Помощь в продвижении ваших проектов, фотосессии готовых интерьеров, упоминания в наших каналах.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Процесс работы -->
+        <section class="designers-process animate-on-scroll">
+            <div class="container">
+                <div class="designers-process__header">
+                    <div class="designers-process__badge">Как это работает</div>
+                    <h2 class="designers-process__title">Процесс сотрудничества</h2>
+                    <p class="designers-process__subtitle">Простой и прозрачный процесс от заявки до реализации проекта</p>
+                </div>
+                <div class="designers-process__timeline">
+                    <div class="designers-process__step">
+                        <div class="designers-process__step-number">01</div>
+                        <div class="designers-process__step-content">
+                            <h3 class="designers-process__step-title">Регистрация</h3>
+                            <p class="designers-process__step-text">Заполните форму заявки на партнерство. Мы рассмотрим вашу заявку в течение 24 часов.</p>
+                        </div>
+                    </div>
+                    <div class="designers-process__step">
+                        <div class="designers-process__step-number">02</div>
+                        <div class="designers-process__step-content">
+                            <h3 class="designers-process__step-title">Встреча и знакомство</h3>
+                            <p class="designers-process__step-text">Личная встреча с нашим менеджером, обсуждение условий сотрудничества и ваших потребностей.</p>
+                        </div>
+                    </div>
+                    <div class="designers-process__step">
+                        <div class="designers-process__step-number">03</div>
+                        <div class="designers-process__step-content">
+                            <h3 class="designers-process__step-title">Получение доступа</h3>
+                            <p class="designers-process__step-text">Доступ к партнерскому каталогу, ценам и материалам. Персональный менеджер для ваших проектов.</p>
+                        </div>
+                    </div>
+                    <div class="designers-process__step">
+                        <div class="designers-process__step-number">04</div>
+                        <div class="designers-process__step-content">
+                            <h3 class="designers-process__step-title">Работа над проектами</h3>
+                            <p class="designers-process__step-text">Консультации, подбор материалов, разработка индивидуальных решений и производство.</p>
+                        </div>
+                    </div>
+                    <div class="designers-process__step">
+                        <div class="designers-process__step-number">05</div>
+                        <div class="designers-process__step-content">
+                            <h3 class="designers-process__step-title">Реализация</h3>
+                            <p class="designers-process__step-text">Доставка, монтаж и сервисное обслуживание. Поддержка на всех этапах проекта.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Условия сотрудничества -->
+        <section class="designers-conditions animate-on-scroll">
+            <div class="container">
+                <div class="designers-conditions__inner">
+                    <div class="designers-conditions__content">
+                        <div class="designers-conditions__badge">Условия</div>
+                        <h2 class="designers-conditions__title">Условия партнерства</h2>
+                        <p class="designers-conditions__text">Мы предлагаем гибкие условия сотрудничества, адаптированные под разные типы проектов и объемы заказов.</p>
+                        <div class="designers-conditions__list">
+                            <div class="designers-conditions__item">
+                                <div class="designers-conditions__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                </div>
+                                <div class="designers-conditions__item-content">
+                                    <h3 class="designers-conditions__item-title">Скидка от 10% до 15%</h3>
+                                    <p class="designers-conditions__item-text">В зависимости от объема заказов и статуса партнера</p>
+                                </div>
+                            </div>
+                            <div class="designers-conditions__item">
+                                <div class="designers-conditions__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                </div>
+                                <div class="designers-conditions__item-content">
+                                    <h3 class="designers-conditions__item-title">Отсрочка платежа</h3>
+                                    <p class="designers-conditions__item-text">Для постоянных партнеров доступна отсрочка до 30 дней</p>
+                                </div>
+                            </div>
+                            <div class="designers-conditions__item">
+                                <div class="designers-conditions__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                </div>
+                                <div class="designers-conditions__item-content">
+                                    <h3 class="designers-conditions__item-title">Бесплатные образцы</h3>
+                                    <p class="designers-conditions__item-text">Предоставляем образцы материалов и тканей для ваших клиентов</p>
+                                </div>
+                            </div>
+                            <div class="designers-conditions__item">
+                                <div class="designers-conditions__item-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                </div>
+                                <div class="designers-conditions__item-content">
+                                    <h3 class="designers-conditions__item-title">Техническая документация</h3>
+                                    <p class="designers-conditions__item-text">Полный комплект чертежей, спецификаций и 3D-моделей</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="designers-conditions__visual">
+                        <div class="designers-conditions__card">
+                            <div class="designers-conditions__card-header">
+                                <div class="designers-conditions__card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <h3 class="designers-conditions__card-title">Партнерский статус</h3>
+                            </div>
+                            <div class="designers-conditions__card-content">
+                                <div class="designers-conditions__card-feature">
+                                    <span class="designers-conditions__card-feature-label">Минимальный заказ</span>
+                                    <span class="designers-conditions__card-feature-value">от 50 000 ₽</span>
+                                </div>
+                                <div class="designers-conditions__card-feature">
+                                    <span class="designers-conditions__card-feature-label">Скидка</span>
+                                    <span class="designers-conditions__card-feature-value">до 15%</span>
+                                </div>
+                                <div class="designers-conditions__card-feature">
+                                    <span class="designers-conditions__card-feature-label">Персональный менеджер</span>
+                                    <span class="designers-conditions__card-feature-value">✓</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма регистрации -->
+        <section class="designers-form animate-on-scroll" id="contact-form">
+            <div class="container">
+                <div class="designers-form__inner">
+                    <div class="designers-form__content">
+                        <div class="designers-form__badge">Регистрация</div>
+                        <h2 class="designers-form__title">Станьте нашим партнером</h2>
+                        <p class="designers-form__subtitle">Заполните форму, и мы свяжемся с вами в ближайшее время для обсуждения условий сотрудничества</p>
+                        <div class="designers-form__features">
+                            <div class="designers-form__feature">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Быстрое рассмотрение заявки</span>
+                            </div>
+                            <div class="designers-form__feature">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Персональный подход</span>
+                            </div>
+                            <div class="designers-form__feature">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                                <span>Выгодные условия</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="designers-form__form" id="designersForm">
+                        <div class="designers-form__row">
+                            <div class="designers-form__field">
+                                <label for="designerName" class="designers-form__label">Ваше имя *</label>
+                                <input 
+                                    type="text" 
+                                    id="designerName" 
+                                    name="name" 
+                                    class="designers-form__input" 
+                                    placeholder="Введите ваше имя"
+                                    required
+                                >
+                            </div>
+                            <div class="designers-form__field">
+                                <label for="designerPhone" class="designers-form__label">Телефон *</label>
+                                <input 
+                                    type="tel" 
+                                    id="designerPhone" 
+                                    name="phone" 
+                                    class="designers-form__input" 
+                                    placeholder="+7 (___) ___-__-__"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        <div class="designers-form__row">
+                            <div class="designers-form__field">
+                                <label for="designerEmail" class="designers-form__label">Email *</label>
+                                <input 
+                                    type="email" 
+                                    id="designerEmail" 
+                                    name="email" 
+                                    class="designers-form__input" 
+                                    placeholder="your@email.com"
+                                    required
+                                >
+                            </div>
+                            <div class="designers-form__field">
+                                <label for="designerCompany" class="designers-form__label">Название студии</label>
+                                <input 
+                                    type="text" 
+                                    id="designerCompany" 
+                                    name="company" 
+                                    class="designers-form__input" 
+                                    placeholder="Название вашей студии"
+                                >
+                            </div>
+                        </div>
+                        <div class="designers-form__field">
+                            <label for="designerPortfolio" class="designers-form__label">Портфолио (ссылка)</label>
+                            <input 
+                                type="url" 
+                                id="designerPortfolio" 
+                                name="portfolio" 
+                                class="designers-form__input" 
+                                placeholder="https://your-portfolio.com"
+                            >
+                        </div>
+                        <div class="designers-form__field">
+                            <label for="designerMessage" class="designers-form__label">Сообщение</label>
+                            <textarea 
+                                id="designerMessage" 
+                                name="message" 
+                                class="designers-form__textarea" 
+                                placeholder="Расскажите о себе и ваших проектах"
+                                rows="4"
+                            ></textarea>
+                        </div>
+                        <div class="designers-form__privacy">
+                            <label class="designers-form__checkbox-label">
+                                <input 
+                                    type="checkbox" 
+                                    id="designerPrivacy" 
+                                    name="privacy" 
+                                    class="designers-form__checkbox" 
+                                    required
+                                >
+                                <span class="designers-form__checkbox-custom"></span>
+                                <span class="designers-form__checkbox-text">
+                                    Я согласен с <a href="#">политикой конфиденциальности</a>
+                                </span>
+                            </label>
+                        </div>
+                        <button type="submit" class="designers-form__submit">
+                            <span>Отправить заявку</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно обратного звонка -->
+    <div class="callback-modal" id="callbackModal" aria-hidden="true" role="dialog" aria-labelledby="callbackModalTitle">
+        <div class="callback-modal__overlay"></div>
+        <div class="callback-modal__content">
+            <button class="callback-modal__close" id="callbackModalClose" aria-label="Закрыть модальное окно">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            
+            <div class="callback-modal__header">
+                <h2 class="callback-modal__title" id="callbackModalTitle">Заказать звонок</h2>
+                <p class="callback-modal__subtitle">Оставьте свои контакты, и мы свяжемся с вами в ближайшее время</p>
+            </div>
+
+            <form class="callback-modal__form" id="callbackForm">
+                <div class="callback-modal__field">
+                    <label for="callbackName" class="callback-modal__label">Ваше имя</label>
+                    <input 
+                        type="text" 
+                        id="callbackName" 
+                        name="name" 
+                        class="callback-modal__input" 
+                        placeholder="Введите ваше имя"
+                        required
+                    >
+                    <span class="callback-modal__error" id="callbackNameError"></span>
+                </div>
+
+                <div class="callback-modal__field">
+                    <label for="callbackPhone" class="callback-modal__label">Номер телефона</label>
+                    <input 
+                        type="tel" 
+                        id="callbackPhone" 
+                        name="phone" 
+                        class="callback-modal__input" 
+                        placeholder="+7 (___) ___-__-__"
+                        required
+                    >
+                    <span class="callback-modal__error" id="callbackPhoneError"></span>
+                </div>
+
+                <button type="submit" class="callback-modal__submit">
+                    <span>Заказать звонок</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <p class="callback-modal__privacy">
+                    Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                </p>
+            </form>
+
+            <!-- Сообщение об успехе -->
+            <div class="callback-modal__success" id="callbackSuccess">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 12l2 2 4-4"/>
+                </svg>
+                <h3>Спасибо за обращение!</h3>
+                <p>Наш менеджер свяжется с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно чата -->
+    <div class="chat-modal" id="chatModal" aria-hidden="true" role="dialog" aria-labelledby="chatModalTitle">
+        <div class="chat-modal__overlay"></div>
+        <div class="chat-modal__content">
+            <!-- Заголовок с информацией о менеджере -->
+            <div class="chat-modal__header">
+                <div class="chat-modal__header-content">
+                    <div class="chat-modal__manager-info">
+                        <div class="chat-modal__avatar">
+                            <img src="img/logo.webp" alt="Наталия" class="chat-modal__avatar-img">
+                            <span class="chat-modal__status"></span>
+                        </div>
+                        <div class="chat-modal__manager-text">
+                            <div class="chat-modal__manager-name">Наталия, ведущий менеджер</div>
+                            <div class="chat-modal__manager-status">Мы тут! Всегда общение.</div>
+                        </div>
+                    </div>
+                    <button class="chat-modal__close-header" id="chatModalClose" aria-label="Закрыть чат">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Основной контент -->
+            <div class="chat-modal__body">
+                <form class="chat-modal__form" id="chatForm">
+                    <div class="chat-modal__field">
+                        <input 
+                            type="text" 
+                            id="chatName" 
+                            name="name" 
+                            class="chat-modal__input" 
+                            placeholder="Ваше имя"
+                            required
+                        >
+                        <span class="chat-modal__error" id="chatNameError"></span>
+                    </div>
+
+                    <div class="chat-modal__field">
+                        <input 
+                            type="tel" 
+                            id="chatPhone" 
+                            name="phone" 
+                            class="chat-modal__input" 
+                            placeholder="Ваш телефон"
+                            required
+                        >
+                        <span class="chat-modal__error" id="chatPhoneError"></span>
+                    </div>
+
+                    <div class="chat-modal__field">
+                        <textarea 
+                            id="chatMessage" 
+                            name="message" 
+                            class="chat-modal__textarea" 
+                            placeholder="Ваше сообщение (необязательно)"
+                            rows="3"
+                        ></textarea>
+                        <span class="chat-modal__error" id="chatMessageError"></span>
+                    </div>
+
+                    <button type="submit" class="chat-modal__submit">
+                        <span>Отправить сообщение</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Сообщение об успехе -->
+                <div class="chat-modal__success" id="chatSuccess">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                    <h3>Сообщение отправлено!</h3>
+                    <p>Наталия свяжется с вами в ближайшее время</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Кнопка "Наверх" -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Плавающие кнопки связи -->
+    <div class="floating-buttons">
+        <!-- Кнопка Позвонить -->
+        <a href="tel:+79785977442" class="floating-button floating-button--phone" aria-label="Позвонить">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <!-- Кнопка Telegram -->
+        <a href="https://t.me/your_telegram" target="_blank" class="floating-button floating-button--telegram" aria-label="Telegram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Виджет чата с менеджером -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Развернутый вид -->
+        <div class="chat-widget__content">
+            <div class="chat-widget__avatar">
+                <img src="img/logo.webp" alt="Менеджер" class="chat-widget__avatar-img">
+            </div>
+            <div class="chat-widget__info">
+                <div class="chat-widget__name">Наталия, ведущий менеджер</div>
+                <div class="chat-widget__message">Мы тут! Всегда общение.</div>
+            </div>
+            <button class="chat-widget__button" id="chatButton" aria-label="Открыть чат">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <button class="chat-widget__close" id="chatClose" aria-label="Свернуть">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <!-- Свернутый вид (только иконка) -->
+        <button class="chat-widget__collapsed" id="chatCollapsed" aria-label="Развернуть чат">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="chat-widget__badge">1</span>
+        </button>
+    </div>
+
+    <!-- Модальное окно для обратной связи -->
+    <div class="callback-modal" id="callbackModal" aria-hidden="true" role="dialog" aria-labelledby="callbackModalTitle">
+        <div class="callback-modal__overlay"></div>
+        <div class="callback-modal__content">
+            <button class="callback-modal__close" id="callbackModalClose" aria-label="Закрыть модальное окно">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            
+            <div class="callback-modal__header">
+                <h2 class="callback-modal__title" id="callbackModalTitle">Заказать звонок</h2>
+                <p class="callback-modal__subtitle">Оставьте свои контакты, и мы свяжемся с вами в ближайшее время</p>
+            </div>
+
+            <form class="callback-modal__form" id="callbackForm">
+                <div class="callback-modal__field">
+                    <label for="callbackName" class="callback-modal__label">Ваше имя</label>
+                    <input 
+                        type="text" 
+                        id="callbackName" 
+                        name="name" 
+                        class="callback-modal__input" 
+                        placeholder="Введите ваше имя"
+                        required
+                    >
+                    <span class="callback-modal__error" id="callbackNameError"></span>
+                </div>
+
+                <div class="callback-modal__field">
+                    <label for="callbackPhone" class="callback-modal__label">Номер телефона</label>
+                    <input 
+                        type="tel" 
+                        id="callbackPhone" 
+                        name="phone" 
+                        class="callback-modal__input" 
+                        placeholder="+7 (___) ___-__-__"
+                        required
+                    >
+                    <span class="callback-modal__error" id="callbackPhoneError"></span>
+                </div>
+
+                <button type="submit" class="callback-modal__submit">
+                    <span>Заказать звонок</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <p class="callback-modal__privacy">
+                    Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                </p>
+            </form>
+
+            <!-- Сообщение об успехе -->
+            <div class="callback-modal__success" id="callbackSuccess">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 12l2 2 4-4"/>
+                </svg>
+                <h3>Спасибо за обращение!</h3>
+                <p>Наш менеджер свяжется с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно чата -->
+    <div class="chat-modal" id="chatModal" aria-hidden="true" role="dialog" aria-labelledby="chatModalTitle">
+        <div class="chat-modal__overlay"></div>
+        <div class="chat-modal__content">
+            <!-- Заголовок с информацией о менеджере -->
+            <div class="chat-modal__header">
+                <div class="chat-modal__header-content">
+                    <div class="chat-modal__manager-info">
+                        <div class="chat-modal__avatar">
+                            <img src="img/logo.webp" alt="Наталия" class="chat-modal__avatar-img">
+                            <span class="chat-modal__status"></span>
+                        </div>
+                        <div class="chat-modal__manager-text">
+                            <div class="chat-modal__manager-name">Наталия, ведущий менеджер</div>
+                            <div class="chat-modal__manager-status">Мы тут! Всегда общение.</div>
+                        </div>
+                    </div>
+                    <button class="chat-modal__close-header" id="chatModalClose" aria-label="Закрыть чат">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 6L6 18M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Основной контент -->
+            <div class="chat-modal__body">
+                <form class="chat-modal__form" id="chatForm">
+                    <div class="chat-modal__field">
+                        <input 
+                            type="text" 
+                            id="chatName" 
+                            name="name" 
+                            class="chat-modal__input" 
+                            placeholder="Ваше имя"
+                            required
+                        >
+                        <span class="chat-modal__error" id="chatNameError"></span>
+                    </div>
+
+                    <div class="chat-modal__field">
+                        <input 
+                            type="tel" 
+                            id="chatPhone" 
+                            name="phone" 
+                            class="chat-modal__input" 
+                            placeholder="Ваш телефон"
+                            required
+                        >
+                        <span class="chat-modal__error" id="chatPhoneError"></span>
+                    </div>
+
+                    <div class="chat-modal__field">
+                        <textarea 
+                            id="chatMessage" 
+                            name="message" 
+                            class="chat-modal__textarea" 
+                            placeholder="Ваше сообщение (необязательно)"
+                            rows="3"
+                        ></textarea>
+                        <span class="chat-modal__error" id="chatMessageError"></span>
+                    </div>
+
+                    <button type="submit" class="chat-modal__submit">
+                        <span>Отправить сообщение</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Сообщение об успехе -->
+                <div class="chat-modal__success" id="chatSuccess">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12l2 2 4-4"/>
+                    </svg>
+                    <h3>Сообщение отправлено!</h3>
+                    <p>Менеджер свяжется с вами в ближайшее время</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript - Модульная структура -->
+    <script type="module" src="js/app.js"></script>
+    
+    <!-- Fallback для старых браузеров (без модулей) -->
+    <script nomodule src="js/main.js" defer></script>
+</body>
+</html>

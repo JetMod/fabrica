@@ -128,6 +128,36 @@
     max-width: calc((100% - 72px) / 4);
 }
 
+/* Каскадное появление карточек при скролле */
+.featured-products.animate-on-scroll:not(.animated) .product-card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.featured-products.animate-on-scroll.animated .product-card {
+    animation: productCardFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.featured-products.animate-on-scroll.animated .product-card:nth-child(1) { animation-delay: 0.05s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(2) { animation-delay: 0.1s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(3) { animation-delay: 0.15s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(4) { animation-delay: 0.2s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(5) { animation-delay: 0.25s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(6) { animation-delay: 0.3s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(7) { animation-delay: 0.35s; }
+.featured-products.animate-on-scroll.animated .product-card:nth-child(8) { animation-delay: 0.4s; }
+
+@keyframes productCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Навигация слайдера */
 .featured-products__nav {
     position: absolute;
@@ -210,11 +240,14 @@
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .product-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Изображение товара */
@@ -233,7 +266,7 @@
 }
 
 .product-card:hover .product-card__img {
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 
 /* Градиентный оверлей при наведении */
@@ -397,8 +430,8 @@
     opacity: 0.7;
 }
 
-/* Кнопка корзины */
-.product-card__cart {
+/* Кнопка «Узнать цену» (каталог, не магазин) */
+.product-card__request {
     width: 44px;
     height: 44px;
     background: linear-gradient(135deg, var(--color-accent), rgba(198, 161, 91, 0.9));
@@ -413,12 +446,12 @@
     box-shadow: 0 4px 12px rgba(198, 161, 91, 0.3);
 }
 
-.product-card__cart:hover {
+.product-card__request:hover {
     transform: scale(1.1) rotate(-5deg);
     box-shadow: 0 6px 20px rgba(198, 161, 91, 0.5);
 }
 
-.product-card__cart:active {
+.product-card__request:active {
     transform: scale(0.95);
 }
 
@@ -526,7 +559,7 @@
         font-size: 18px;
     }
     
-    .product-card__cart {
+    .product-card__request {
         width: 40px;
         height: 40px;
     }

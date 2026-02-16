@@ -14,6 +14,10 @@
     
     <title>Дизайнерская мебель премиум-класса — ФАБРИКА интерьера</title>
     
+    <!-- Иконка для браузера (логотип) -->
+    <link rel="icon" href="img/logo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="img/logo.webp">
+    
     <!-- Preload критических ресурсов -->
     <link rel="preload" as="image" href="img/logo.webp">
     
@@ -31,25 +35,19 @@
                     <!-- Верхнее меню -->
                     <nav class="header__top-nav">
                         <a href="office.html" class="header__top-link">Офис</a>
-                        <a href="#designers" class="header__top-link">Дизайнерам</a>
-                        <a href="#business" class="header__top-link">Бизнесу</a>
-                        <a href="#delivery" class="header__top-link">Доставка</a>
+                        <a href="designers.html" class="header__top-link">Дизайнерам</a>
+                        <a href="business.html" class="header__top-link">Бизнесу</a>
+                        <a href="delivery.html" class="header__top-link">Доставка</a>
                         <a href="#projects" class="header__top-link">Проекты</a>
                     </nav>
 
                     <!-- Правая часть -->
                     <div class="header__top-right">
-                        <a href="#" class="header__top-link header__top-login">
+                        <a href="catalog.html" class="header__top-link header__top-catalog">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 8a3 3 0 100-6 3 3 0 000 6zM8 9c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                                <path d="M2 2h3v3H2V2zm5 0h3v3H7V2zm5 0h3v3h-3V2zM2 7h3v3H2V7zm5 0h3v3H7V7zm5 0h3v3h-3V7zM2 12h3v3H2v-3zm5 0h3v3H7v-3zm5 0h3v3h-3v-3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Войти
-                        </a>
-                        <a href="#" class="header__top-link header__top-cart">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.5 14a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM12.5 14a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 1h1.5l2.5 8h7l2-6H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            0
+                            Каталог
                         </a>
                     </div>
                 </div>
@@ -178,8 +176,10 @@
                 <a href="#sale" class="header__mobile-link header__mobile-link--accent">Акции</a>
                 <a href="#about" class="header__mobile-link">О компании</a>
                 <a href="#production" class="header__mobile-link">Производство</a>
-                <a href="#designers" class="header__mobile-link">Дизайнерам</a>
-                <a href="#projects" class="header__mobile-link">Проекты</a>
+                <a href="designers.html" class="header__mobile-link">Дизайнерам</a>
+                <a href="business.html" class="header__mobile-link">Бизнесу</a>
+                <a href="delivery.html" class="header__mobile-link">Доставка</a>
+                <a href="projects.html" class="header__mobile-link">Проекты</a>
                 <a href="#contacts" class="header__mobile-link">Контакты</a>
             </nav>
         </div>
@@ -269,7 +269,7 @@
                         <div class="office-about__badge">О нас</div>
                         <h2 class="office-about__title">Мебель для тех,<br>кто ценит качество</h2>
                         <p class="office-about__text">
-                            С 2010 года мы создаём дизайнерскую мебель премиум-класса, которая сочетает функциональность, эстетику и безупречный дизайн. Каждое изделие — результат многолетнего опыта и внимания к деталям.
+                            Мы создаём дизайнерскую мебель премиум-класса, которая сочетает функциональность, эстетику и безупречный дизайн. Каждое изделие — результат многолетнего опыта и внимания к деталям.
                         </p>
                         <p class="office-about__text">
                             Мы понимаем, что интерьерное пространство влияет на настроение и вдохновение. Поэтому предлагаем решения, которые создают атмосферу уюта, стиля и индивидуальности.
@@ -635,9 +635,9 @@
                         <h4 class="footer__menu-title">Компания</h4>
                         <ul class="footer__menu-list">
                             <li><a href="#about" class="footer__menu-link">О нас</a></li>
-                            <li><a href="#projects" class="footer__menu-link">Наши проекты</a></li>
+                            <li><a href="projects.html" class="footer__menu-link">Наши проекты</a></li>
                             <li><a href="#production" class="footer__menu-link">Производство</a></li>
-                            <li><a href="#blog" class="footer__menu-link">Блог</a></li>
+                            <li><a href="blog.html" class="footer__menu-link">Блог</a></li>
                             <li><a href="#" class="footer__menu-link">Карьера</a></li>
                         </ul>
                     </div>
@@ -658,10 +658,10 @@
                     <div class="footer__menu-column">
                         <h4 class="footer__menu-title">Услуги</h4>
                         <ul class="footer__menu-list">
-                            <li><a href="#benefits" class="footer__menu-link">Для дизайнеров</a></li>
-                            <li><a href="#benefits" class="footer__menu-link">Для бизнеса</a></li>
+                            <li><a href="designers.html" class="footer__menu-link">Для дизайнеров</a></li>
+                            <li><a href="business.html" class="footer__menu-link">Для бизнеса</a></li>
                             <li><a href="#" class="footer__menu-link">Индивидуальный дизайн</a></li>
-                            <li><a href="#" class="footer__menu-link">Доставка и сборка</a></li>
+                            <li><a href="delivery.html" class="footer__menu-link">Доставка и сборка</a></li>
                             <li><a href="#" class="footer__menu-link">Гарантия</a></li>
                         </ul>
                     </div>

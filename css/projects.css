@@ -228,3 +228,297 @@
 .projects__item:nth-child(6) { animation-delay: 0.3s; }
 .projects__item:nth-child(7) { animation-delay: 0.35s; }
 .projects__item:nth-child(8) { animation-delay: 0.4s; }
+
+/* ===================================
+   Страница Проекты
+   =================================== */
+
+/* Hero */
+.projects-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 100px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F5F3EF 0%, #FFFFFF 50%, #F8F6F2 100%);
+}
+
+.projects-hero__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.projects-hero__gradient {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: projectsFloatGradient 20s ease-in-out infinite;
+}
+
+.projects-hero__gradient--1 {
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(198, 161, 91, 0.3) 0%, rgba(198, 161, 91, 0.1) 100%);
+    top: -200px;
+    right: -100px;
+}
+
+.projects-hero__gradient--2 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(198, 161, 91, 0.2) 0%, rgba(198, 161, 91, 0.05) 100%);
+    bottom: -150px;
+    left: -50px;
+    animation-delay: 5s;
+}
+
+@keyframes projectsFloatGradient {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.projects-hero__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(198, 161, 91, 0.03) 2px, rgba(198, 161, 91, 0.03) 4px);
+    opacity: 0.4;
+}
+
+.projects-hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.projects-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+    padding: 12px 24px;
+    background: rgba(198, 161, 91, 0.1);
+    border: 1px solid rgba(198, 161, 91, 0.2);
+    border-radius: 50px;
+}
+
+.projects-hero__badge-icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-accent);
+}
+
+.projects-hero__title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--color-dark);
+}
+
+.projects-hero__title-line {
+    display: block;
+}
+
+.projects-hero__title-line--accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #D4B87A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.projects-hero__subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(30, 30, 30, 0.7);
+    margin-bottom: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-hero__stats {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(198, 161, 91, 0.2);
+}
+
+.projects-hero__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.projects-hero__stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.projects-hero__stat-label {
+    font-size: 14px;
+    color: rgba(30, 30, 30, 0.6);
+    line-height: 1.4;
+}
+
+/* Галерея проектов */
+.projects-gallery {
+    padding: 80px 0 120px;
+    background: var(--color-white);
+}
+
+.projects-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.projects-gallery__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    transition: transform 0.3s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.projects-gallery__item:hover {
+    transform: scale(1.02);
+}
+
+.projects-gallery__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.projects-gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projects-gallery__item:hover .projects-gallery__img {
+    transform: scale(1.08);
+}
+
+.projects-gallery__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    opacity: 1;
+    transition: background 0.3s ease;
+}
+
+.projects-gallery__item:hover .projects-gallery__overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.projects-gallery__content {
+    width: 100%;
+}
+
+.projects-gallery__name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.projects-gallery__category {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Адаптив для страницы проектов */
+@media (max-width: 1200px) {
+    .projects-gallery__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 968px) {
+    .projects-hero {
+        min-height: auto;
+        padding: 100px 0 80px;
+    }
+    
+    .projects-hero__title {
+        font-size: 48px;
+    }
+    
+    .projects-hero__subtitle {
+        font-size: 18px;
+    }
+    
+    .projects-hero__stats {
+        gap: 48px;
+    }
+    
+    .projects-gallery {
+        padding: 60px 0 80px;
+    }
+    
+    .projects-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-hero__title {
+        font-size: 36px;
+    }
+    
+    .projects-hero__stats {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .projects-gallery__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .projects-gallery__name {
+        font-size: 18px;
+    }
+    
+    .projects-gallery__category {
+        font-size: 13px;
+    }
+    
+    .projects-gallery__overlay {
+        padding: 20px;
+    }
+}

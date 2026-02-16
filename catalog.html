@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог премиальной мебели и интерьерных решений. Мебель, освещение, декор, текстиль и многое другое от ФАБРИКА интерьера">
+    <meta name="theme-color" content="#F5F3EF">
+    <meta property="og:title" content="Каталог — ФАБРИКА интерьера">
+    <meta property="og:type" content="website">
+    <title>Каталог — ФАБРИКА интерьера</title>
+    <link rel="icon" href="img/logo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="img/logo.webp">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/catalog-page.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-inner">
+                    <nav class="header__top-nav">
+                        <a href="office.html" class="header__top-link">Офис</a>
+                        <a href="designers.html" class="header__top-link">Дизайнерам</a>
+                        <a href="business.html" class="header__top-link">Бизнесу</a>
+                        <a href="delivery.html" class="header__top-link">Доставка</a>
+                        <a href="projects.html" class="header__top-link">Проекты</a>
+                    </nav>
+                    <div class="header__top-right">
+                        <a href="catalog.html" class="header__top-link header__top-catalog header__top-link--active">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 2h3v3H2V2zm5 0h3v3H7V2zm5 0h3v3h-3V2zM2 7h3v3H2V7zm5 0h3v3H7V7zm5 0h3v3h-3V7zM2 12h3v3H2v-3zm5 0h3v3H7v-3zm5 0h3v3h-3v-3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Каталог
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__middle">
+            <div class="container">
+                <div class="header__middle-inner">
+                    <div class="header__branding">
+                        <a href="index.html" class="header__logo">
+                            <img src="img/logo.webp" alt="ФАБРИКА интерьера" class="header__logo-img">
+                        </a>
+                        <p class="header__tagline">Дизайнерская мебель<br>для дома, работы и отдыха</p>
+                    </div>
+                    <div class="header__search">
+                        <input type="text" placeholder="Поиск" class="header__search-input">
+                        <button class="header__search-button" aria-label="Искать">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 17A8 8 0 109 1a8 8 0 000 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="header__right">
+                        <div class="header__contacts-group">
+                            <div class="header__work-time header__work-time--right">
+                                <div class="header__work-time-header">
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M8 4v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    Режим работы:
+                                </div>
+                                <div class="header__work-time-value">ежедневно, 10:00–19:00</div>
+                            </div>
+                            <a href="tel:+79785977442" class="header__phone">
+                                <span class="header__phone-label">Звоните сейчас</span>
+                                <span class="header__phone-number">+7 (978) 597-74-42</span>
+                            </a>
+                        </div>
+                        <a href="#contact-form" class="header__cta-button">Заказать звонок</a>
+                    </div>
+                    <button class="header__burger" aria-label="Открыть меню">
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li class="header__menu-item"><a href="index.html#new" class="header__menu-link">Новое</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Мебель</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Гостинная</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Столовая</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Спальна</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Ванна</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Декор</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">На улице</a></li>
+                        <li class="header__menu-item"><a href="office.html" class="header__menu-link">Офис</a></li>
+                        <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Horeca</a></li>
+                        <li class="header__menu-item"><a href="index.html#sale" class="header__menu-link header__menu-link--accent">Акции</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header__mobile-overlay"></div>
+        <div class="header__mobile-menu">
+            <div class="header__mobile-search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__search-icon">
+                    <path d="M9 17A8 8 0 109 1a8 8 0 000 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input type="text" placeholder="Поиск" class="header__search-input">
+            </div>
+            <nav class="header__mobile-nav">
+                <a href="index.html#new" class="header__mobile-link">Новое</a>
+                <a href="catalog.html" class="header__mobile-link">Мебель</a>
+                <a href="catalog.html" class="header__mobile-link">Освещение</a>
+                <a href="catalog.html" class="header__mobile-link">Декор + Посуда</a>
+                <a href="catalog.html" class="header__mobile-link">Текстиль</a>
+                <a href="catalog.html" class="header__mobile-link">Напольные покрытия</a>
+                <a href="catalog.html" class="header__mobile-link">Стены + Обои</a>
+                <a href="catalog.html" class="header__mobile-link">Панели</a>
+                <a href="catalog.html" class="header__mobile-link">Horeca</a>
+                <a href="office.html" class="header__mobile-link">Офис</a>
+                <a href="index.html#sale" class="header__mobile-link header__mobile-link--accent">Акции</a>
+                <a href="index.html#about" class="header__mobile-link">О компании</a>
+                <a href="index.html#production" class="header__mobile-link">Производство</a>
+                <a href="designers.html" class="header__mobile-link">Дизайнерам</a>
+                <a href="business.html" class="header__mobile-link">Бизнесу</a>
+                <a href="delivery.html" class="header__mobile-link">Доставка</a>
+                <a href="projects.html" class="header__mobile-link">Проекты</a>
+                <a href="index.html#contacts" class="header__mobile-link">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="catalog-hero">
+            <div class="catalog-hero__background">
+                <div class="catalog-hero__gradient catalog-hero__gradient--1"></div>
+                <div class="catalog-hero__gradient catalog-hero__gradient--2"></div>
+                <div class="catalog-hero__pattern"></div>
+            </div>
+            <div class="container">
+                <div class="catalog-hero__inner">
+                    <h1 class="catalog-hero__title">Каталог</h1>
+                    <p class="catalog-hero__subtitle">Откройте для себя мир премиальных интерьерных решений</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог категорий -->
+        <section class="catalog-categories">
+            <div class="container">
+                <div class="catalog-categories__grid">
+                    <!-- Столы -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/16.webp" alt="Столы" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Столы</h3>
+                    </a>
+
+                    <!-- Стулья -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/17.webp" alt="Стулья" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Стулья</h3>
+                    </a>
+
+                    <!-- Комоды и тумбы -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/18.webp" alt="Комоды и тумбы" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Комоды и тумбы</h3>
+                    </a>
+
+                    <!-- Шкафы и стеллажи -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/19.webp" alt="Шкафы и стеллажи" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Шкафы и стеллажи</h3>
+                    </a>
+
+                    <!-- Диваны и кресла -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/20.webp" alt="Диваны и кресла" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Диваны и кресла</h3>
+                    </a>
+
+                    <!-- Полки и вешалки -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/21.webp" alt="Полки и вешалки" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Полки и вешалки</h3>
+                    </a>
+
+                    <!-- Освещение -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/18.webp" alt="Освещение" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Освещение</h3>
+                    </a>
+
+                    <!-- Декор -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/19.webp" alt="Декор" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Декор</h3>
+                    </a>
+
+                    <!-- Текстиль -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/17.webp" alt="Текстиль" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Текстиль</h3>
+                    </a>
+
+                    <!-- Напольные покрытия -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/16.webp" alt="Напольные покрытия" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Напольные покрытия</h3>
+                    </a>
+
+                    <!-- Обои -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/22.webp" alt="Обои" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Обои</h3>
+                    </a>
+
+                    <!-- Панели -->
+                    <a href="category.html" class="catalog-categories__card">
+                        <div class="catalog-categories__image">
+                            <img src="img/6.webp" alt="Панели" class="catalog-categories__img" loading="lazy">
+                        </div>
+                        <h3 class="catalog-categories__title">Панели</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Скидки и тренды -->
+        <section class="featured-products animate-on-scroll" id="sale" aria-label="Популярные позиции каталога — скидки и тренды">
+            <div class="container">
+                <!-- Заголовок с табами -->
+                <div class="featured-products__header">
+                    <div class="featured-products__tabs">
+                        <button class="featured-products__tab active" data-tab="sale">Скидки и акции</button>
+                        <button class="featured-products__tab" data-tab="new">Тренды</button>
+                    </div>
+                    <a href="catalog.html" class="featured-products__view-all">
+                        Смотреть всё
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Контент табов -->
+                <div class="featured-products__content">
+                    <!-- Таб: Скидки и акции -->
+                    <div class="featured-products__tab-content active" data-content="sale">
+                        <div class="featured-products__slider">
+                            <button class="featured-products__nav featured-products__nav--prev" aria-label="Предыдущий">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="featured-products__slider-wrapper">
+                                <div class="featured-products__grid">
+                                <!-- Товар 1 -->
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/16.webp" alt="Стол обеденный" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge">Финальная цена</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стол обеденный раскладной</h3>
+                                        <div class="product-card__status product-card__status--available">В наличии</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">45 900 руб.</span>
+                                                <span class="product-card__price-old">62 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Товар 2 -->
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/17.webp" alt="Стулья Galloti" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стулья Galloti комплект 4 шт</h3>
+                                        <div class="product-card__status product-card__status--order">Под заказ</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">89 900 руб.</span>
+                                                <span class="product-card__price-old">115 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Товар 3 -->
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/18.webp" alt="Стул Morgan" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge">Финальная цена</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стул Morgan, велюр серый</h3>
+                                        <div class="product-card__status product-card__status--available">В наличии</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">24 990 руб.</span>
+                                                <span class="product-card__price-old">32 990 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Товар 4 -->
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/19.webp" alt="Стол Orion" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стол Orion раскладной круглый</h3>
+                                        <div class="product-card__status product-card__status--available">В наличии</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">52 900 руб.</span>
+                                                <span class="product-card__price-old">68 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Товар 5 -->
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/20.webp" alt="Диван Campo" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge">Финальная цена</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Диван Campo, ткань букле</h3>
+                                        <div class="product-card__status product-card__status--order">Под заказ</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">169 900 руб.</span>
+                                                <span class="product-card__price-old">199 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Товар 6 -->
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/17.webp" alt="Стулья Galloti" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge">Финальная цена</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стулья Galloti, комплект 2 шт</h3>
+                                        <div class="product-card__status product-card__status--available">В наличии</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">54 900 руб.</span>
+                                                <span class="product-card__price-old">69 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <button class="featured-products__nav featured-products__nav--next" aria-label="Следующий">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="featured-products__dots"></div>
+                    </div>
+
+                    <!-- Таб: Тренды -->
+                    <div class="featured-products__tab-content" data-content="new">
+                        <div class="featured-products__slider">
+                            <button class="featured-products__nav featured-products__nav--prev" aria-label="Предыдущий">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="featured-products__slider-wrapper">
+                                <div class="featured-products__grid">
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/20.webp" alt="Диван Campo" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge product-card__badge--trend">Тренд</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Диван Campo от Giovanni Lella</h3>
+                                        <div class="product-card__status product-card__status--order">Под заказ</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">189 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/19.webp" alt="Коллекция Sofia" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge product-card__badge--trend">Тренд</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Коллекция Sofia, стол Orion</h3>
+                                        <div class="product-card__status product-card__status--available">В наличии</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">129 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/18.webp" alt="Стул Morgan" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge product-card__badge--trend">Тренд</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стул Morgan, латте</h3>
+                                        <div class="product-card__status product-card__status--order">Под заказ</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">27 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/17.webp" alt="Стулья Galloti" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge product-card__badge--trend">Тренд</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стулья Galloti, комплект 2 шт</h3>
+                                        <div class="product-card__status product-card__status--available">В наличии</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">59 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-card">
+                                    <div class="product-card__image">
+                                        <img src="img/16.webp" alt="Стол обеденный" class="product-card__img">
+                                        <button class="product-card__favorite" aria-label="В избранное">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                            </svg>
+                                        </button>
+                                        <div class="product-card__badge product-card__badge--trend">Тренд</div>
+                                    </div>
+                                    <div class="product-card__info">
+                                        <h3 class="product-card__title">Стол обеденный, ясень</h3>
+                                        <div class="product-card__status product-card__status--order">Под заказ</div>
+                                        <div class="product-card__footer">
+                                            <div class="product-card__price">
+                                                <span class="product-card__price-current">74 900 руб.</span>
+                                            </div>
+                                            <button type="button" class="product-card__request" aria-label="Узнать цену" data-callback-modal>
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2 4h16v12H2V4zm0 0l8 5 8-5M2 16V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <button class="featured-products__nav featured-products__nav--next" aria-label="Следующий">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="featured-products__dots"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма заявки -->
+        <section class="contact animate-on-scroll" id="contact-form" aria-labelledby="contact-title">
+            <div class="contact__background">
+                <div class="contact__pattern"></div>
+            </div>
+            <div class="container">
+                <div class="contact__premium">
+                    <div class="contact__header">
+                        <span class="contact__accent">Нужна консультация?</span>
+                        <h2 class="contact__title" id="contact-title">Обсудим ваш проект</h2>
+                        <p class="contact__subtitle">Оставьте заявку, и наш эксперт свяжется с вами для обсуждения интерьерного решения</p>
+                    </div>
+                    <form class="contact__form" id="contactForm">
+                        <div class="contact__form-row">
+                            <div class="contact__field">
+                                <input type="text" name="name" class="contact__input" placeholder="Ваше имя" required>
+                                <span class="contact__error" id="contactNameError"></span>
+                            </div>
+                            <div class="contact__field">
+                                <input type="tel" name="phone" class="contact__input" placeholder="Телефон" required>
+                                <span class="contact__error" id="contactPhoneError"></span>
+                            </div>
+                        </div>
+                        <div class="contact__field">
+                            <textarea name="message" class="contact__textarea" placeholder="Сообщение (необязательно)" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="contact__submit">
+                            <span>Отправить заявку</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <p class="contact__privacy">
+                            Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                        </p>
+                    </form>
+                    <div class="contact__success" id="contactSuccess">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12l2 2 4-4"/>
+                        </svg>
+                        <h3>Спасибо!</h3>
+                        <p>Менеджер свяжется с вами в ближайшее время</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacts" role="contentinfo">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__brand">
+                        <div class="footer__logo">
+                            <img src="img/logo.webp" alt="ФАБРИКА интерьера" class="footer__logo-img">
+                        </div>
+                        <p class="footer__description">
+                            Производство полного цикла интерьерных решений премиум-класса. Создаём мебель и комплексные проекты под ключ с 2010 года.
+                        </p>
+                        <div class="footer__social">
+                            <a href="#" class="footer__social-link" aria-label="ВКонтакте">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2z"/></svg>
+                            </a>
+                            <a href="#" class="footer__social-link" aria-label="WhatsApp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                            <a href="#" class="footer__social-link" aria-label="Telegram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__menu-grid">
+                        <div class="footer__menu-column">
+                            <h4 class="footer__menu-title">Компания</h4>
+                            <ul class="footer__menu-list">
+                                <li><a href="index.html#about" class="footer__menu-link">О нас</a></li>
+                                <li><a href="projects.html" class="footer__menu-link">Наши проекты</a></li>
+                                <li><a href="index.html#production" class="footer__menu-link">Производство</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__menu-column">
+                            <h4 class="footer__menu-title">Услуги</h4>
+                            <ul class="footer__menu-list">
+                                <li><a href="designers.html" class="footer__menu-link">Дизайнерам</a></li>
+                                <li><a href="business.html" class="footer__menu-link">Бизнесу</a></li>
+                                <li><a href="delivery.html" class="footer__menu-link">Доставка</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__menu-column">
+                            <h4 class="footer__menu-title">Контакты</h4>
+                            <ul class="footer__contacts-list">
+                                <li class="footer__contact-item">
+                                    <a href="tel:+79785977442" class="footer__contact-link">+7 (978) 597-74-42</a>
+                                </li>
+                                <li class="footer__contact-item">
+                                    <a href="mailto:info@fabrica.ru" class="footer__contact-link">info@fabrica.ru</a>
+                                </li>
+                                <li class="footer__contact-item">
+                                    <span class="footer__contact-text">ежедневно, 10:00–19:00</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">© 2026 ФАБРИКА интерьера. Все права защищены.</p>
+                    <div class="footer__legal">
+                        <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
+                        <span class="footer__separator">•</span>
+                        <a href="#" class="footer__legal-link">Пользовательское соглашение</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="callback-modal" id="callbackModal" aria-hidden="true" role="dialog">
+        <div class="callback-modal__overlay"></div>
+        <div class="callback-modal__content">
+            <button class="callback-modal__close" id="callbackModalClose" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="callback-modal__header">
+                <h2 class="callback-modal__title" id="callbackModalTitle">Заказать звонок</h2>
+                <p class="callback-modal__subtitle">Оставьте контакты — перезвоним в ближайшее время</p>
+            </div>
+            <form class="callback-modal__form" id="callbackForm">
+                <div class="callback-modal__field">
+                    <label for="callbackName" class="callback-modal__label">Ваше имя</label>
+                    <input type="text" id="callbackName" name="name" class="callback-modal__input" placeholder="Введите ваше имя" required>
+                    <span class="callback-modal__error" id="callbackNameError"></span>
+                </div>
+                <div class="callback-modal__field">
+                    <label for="callbackPhone" class="callback-modal__label">Телефон</label>
+                    <input type="tel" id="callbackPhone" name="phone" class="callback-modal__input" placeholder="+7 (___) ___-__-__" required>
+                    <span class="callback-modal__error" id="callbackPhoneError"></span>
+                </div>
+                <button type="submit" class="callback-modal__submit">
+                    <span>Заказать звонок</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <p class="callback-modal__privacy">
+                    Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                </p>
+            </form>
+            <div class="callback-modal__success" id="callbackSuccess">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 12l2 2 4-4"/>
+                </svg>
+                <h3>Спасибо!</h3>
+                <p>Менеджер свяжется с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+    <script nomodule src="js/main.js" defer></script>
+</body>
+</html>
