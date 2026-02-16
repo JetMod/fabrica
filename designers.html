@@ -20,6 +20,7 @@
     
     <!-- Preload критических ресурсов -->
     <link rel="preload" as="image" href="img/logo.webp">
+    <link rel="preload" as="image" href="img/21.webp">
     
     <!-- Стили -->
     <link rel="stylesheet" href="css/main.css">
@@ -137,7 +138,7 @@
                             <a href="catalog.html" class="header__menu-link">На улице</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="office.html" class="header__menu-link">Офис</a>
+                            <a href="office.html" class="header__menu-link">О нас</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="catalog.html" class="header__menu-link">Horeca</a>
@@ -244,11 +245,8 @@
                     </div>
                     <div class="designers-hero__visual">
                         <div class="designers-hero__image-wrapper">
-                            <div class="designers-hero__image-placeholder">
-                                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
+                            <img src="img/21.webp" alt="Партнерство с дизайнерами — премиальная мебель" class="designers-hero__image" loading="eager">
+                            <div class="designers-hero__image-overlay"></div>
                         </div>
                         <div class="designers-hero__decorative">
                             <div class="designers-hero__decorative-item designers-hero__decorative-item--1"></div>
@@ -258,11 +256,11 @@
                     </div>
                 </div>
             </div>
-            <div class="designers-hero__scroll-indicator">
+            <a href="#benefits" class="designers-hero__scroll-indicator" aria-label="К преимуществам">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
                 </svg>
-            </div>
+            </a>
         </section>
 
         <!-- Преимущества -->
@@ -628,7 +626,7 @@
                         </div>
                         <h3 class="footer__cta-title">Дизайн-услуги</h3>
                         <p class="footer__cta-text">Комплексные дизайн-услуги для вашего интерьера под ключ.</p>
-                        <a href="#contact-form"" class="footer__cta-link">Записаться на встречу</a>
+                        <a href="#contact-form" class="footer__cta-link">Записаться на встречу</a>
                     </div>
 
                     <div class="footer__cta-divider"></div>

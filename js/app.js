@@ -13,6 +13,7 @@ import { initScrollTop, initScrollAnimations, initSmoothScroll } from './scroll.
 import { initFeaturedProductsSlider, initFeaturedProductsTabs, initProductCards } from './products.js';
 import { initCallbackModal } from './callback-modal.js';
 import { initChatModal } from './chat-modal.js';
+import { initFAQ } from './faq.js';
 
 /**
  * Инициализация всех компонентов при загрузке страницы
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFeaturedProductsSlider();
     initFeaturedProductsTabs();
     initProductCards();
+    initFAQ();
     
     // Отложенная инициализация неприоритетных компонентов
     if ('requestIdleCallback' in window) {

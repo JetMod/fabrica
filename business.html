@@ -17,6 +17,7 @@
     <link rel="icon" href="img/logo.webp" type="image/webp">
     <link rel="apple-touch-icon" href="img/logo.webp">
     <link rel="preload" as="image" href="img/logo.webp">
+    <link rel="preload" as="image" href="img/21.webp">
     
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/business.css">
@@ -103,7 +104,7 @@
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Ванна</a></li>
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Декор</a></li>
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">На улице</a></li>
-                        <li class="header__menu-item"><a href="office.html" class="header__menu-link">Офис</a></li>
+                        <li class="header__menu-item"><a href="office.html" class="header__menu-link">О нас</a></li>
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Horeca</a></li>
                         <li class="header__menu-item"><a href="index.html#sale" class="header__menu-link header__menu-link--accent">Акции</a></li>
                     </ul>
@@ -145,80 +146,71 @@
         <!-- Hero -->
         <section class="business-hero">
             <div class="business-hero__background">
-                <div class="business-hero__gradient business-hero__gradient--1"></div>
-                <div class="business-hero__gradient business-hero__gradient--2"></div>
-                <div class="business-hero__pattern"></div>
-                <div class="business-hero__shapes">
-                    <div class="business-hero__shape business-hero__shape--1"></div>
-                    <div class="business-hero__shape business-hero__shape--2"></div>
-                    <div class="business-hero__shape business-hero__shape--3"></div>
+                <div class="business-hero__image-bg">
+                    <img src="img/21.webp" alt="Мебель для бизнеса" class="business-hero__bg-img" loading="eager">
+                    <div class="business-hero__overlay"></div>
                 </div>
+                <div class="business-hero__gradient-mesh"></div>
             </div>
+            
             <div class="container">
                 <div class="business-hero__inner">
                     <div class="business-hero__content">
                         <div class="business-hero__badge">
-                            <span class="business-hero__badge-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                    <polyline points="9 22 9 12 15 12 15 22"/>
-                                </svg>
-                            </span>
-                            B2B
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                            <span>B2B Решения</span>
                         </div>
+                        
                         <h1 class="business-hero__title">
-                            <span class="business-hero__title-line">Мебель для</span>
-                            <span class="business-hero__title-line business-hero__title-line--accent">вашего бизнеса</span>
+                            <span class="business-hero__title-main">Мебель для</span>
+                            <span class="business-hero__title-accent">вашего бизнеса</span>
                         </h1>
-                        <p class="business-hero__subtitle">Комплексное оснащение офисов, ресторанов и гостиниц. Оптовые поставки, индивидуальные решения и гарантия качества для корпоративных заказчиков.</p>
+                        
+                        <p class="business-hero__subtitle">
+                            Комплексное оснащение офисов, ресторанов и гостиниц.<br>
+                            Оптовые поставки, индивидуальные решения и гарантия качества.
+                        </p>
+                        
                         <div class="business-hero__actions">
-                            <a href="#contact-form" class="business-hero__button business-hero__button--primary">
-                                <span>Получить коммерческое предложение</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <a href="#contact-form" class="business-hero__cta business-hero__cta--primary">
+                                <span>Получить КП</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
                             </a>
-                            <a href="#benefits" class="business-hero__button business-hero__button--secondary">
+                            <a href="#benefits" class="business-hero__cta business-hero__cta--secondary">
                                 <span>Узнать условия</span>
                             </a>
                         </div>
+                        
                         <div class="business-hero__stats">
-                            <div class="business-hero__stat">
+                            <div class="business-hero__stat-card">
                                 <div class="business-hero__stat-number">500+</div>
-                                <div class="business-hero__stat-label">корпоративных проектов</div>
+                                <div class="business-hero__stat-label">Проектов</div>
                             </div>
-                            <div class="business-hero__stat">
+                            <div class="business-hero__stat-divider"></div>
+                            <div class="business-hero__stat-card">
                                 <div class="business-hero__stat-number">до 20%</div>
-                                <div class="business-hero__stat-label">скидка при опте</div>
+                                <div class="business-hero__stat-label">Скидка</div>
                             </div>
-                            <div class="business-hero__stat">
-                                <div class="business-hero__stat-number">под ключ</div>
-                                <div class="business-hero__stat-label">проектирование и монтаж</div>
+                            <div class="business-hero__stat-divider"></div>
+                            <div class="business-hero__stat-card">
+                                <div class="business-hero__stat-number">100%</div>
+                                <div class="business-hero__stat-label">Под ключ</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="business-hero__visual">
-                        <div class="business-hero__image-wrapper">
-                            <div class="business-hero__image-placeholder">
-                                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                    <polyline points="9 22 9 12 15 12 15 22"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="business-hero__decorative">
-                            <div class="business-hero__decorative-item business-hero__decorative-item--1"></div>
-                            <div class="business-hero__decorative-item business-hero__decorative-item--2"></div>
-                            <div class="business-hero__decorative-item business-hero__decorative-item--3"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="business-hero__scroll-indicator">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            
+            <a href="#benefits" class="business-hero__scroll" aria-label="Прокрутить вниз">
+                <span class="business-hero__scroll-text">Узнать больше</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
                 </svg>
-            </div>
+            </a>
         </section>
 
         <!-- Преимущества -->
@@ -429,37 +421,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Корпоративным клиентам и HoReCa + контакты -->
-        <section class="business-intro animate-on-scroll">
-            <div class="container">
-                <div class="business-intro__inner">
-                    <div class="business-intro__content">
-                        <h2 class="business-intro__title">Корпоративным клиентам и HoReCa</h2>
-                        <p class="business-intro__text">Оснащаем офисы, рестораны, гостиницы и другие коммерческие объекты. Работаем по договору, принимаем безналичную оплату с НДС и без НДС, предоставляем полный пакет документов для бухгалтерии и участие в тендерах.</p>
-                    </div>
-                    <div class="business-intro__divider" aria-hidden="true"></div>
-                    <div class="business-intro__contacts">
-                        <div class="business-intro__contact-item">
-                            <span class="business-intro__contact-label">Мессенджеры</span>
-                            <a href="https://wa.me/79785977442" class="business-intro__contact-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                            <a href="https://t.me/fabrica_interior" class="business-intro__contact-link" target="_blank" rel="noopener noreferrer">Telegram</a>
-                        </div>
-                        <div class="business-intro__contact-item">
-                            <span class="business-intro__contact-label">Телефон</span>
-                            <a href="tel:+79785977442" class="business-intro__contact-value">+7 (978) 597-74-42</a>
-                        </div>
-                        <div class="business-intro__contact-item">
-                            <span class="business-intro__contact-label">Почта</span>
-                            <a href="mailto:info@fabrica.ru" class="business-intro__contact-value">info@fabrica.ru</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
         <!-- Часто задаваемые вопросы -->
         <section class="business-faq animate-on-scroll" id="faq">
             <div class="container">

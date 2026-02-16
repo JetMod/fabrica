@@ -136,75 +136,51 @@
     <main>
         <!-- Hero -->
         <section class="delivery-hero">
-            <div class="delivery-hero__background">
-                <div class="delivery-hero__gradient delivery-hero__gradient--1"></div>
-                <div class="delivery-hero__gradient delivery-hero__gradient--2"></div>
-                <div class="delivery-hero__pattern"></div>
-            </div>
-            <div class="container">
-                <div class="delivery-hero__inner">
-                    <div class="delivery-hero__content">
-                        <div class="delivery-hero__badge">
-                            <span class="delivery-hero__badge-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="1" y="3" width="15" height="13"/>
-                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                                    <circle cx="5.5" cy="18.5" r="2.5"/>
-                                    <circle cx="18.5" cy="18.5" r="2.5"/>
-                                </svg>
-                            </span>
-                            Доставка и сборка
-                        </div>
-                        <h1 class="delivery-hero__title">
-                            <span class="delivery-hero__title-line">Привезём и соберём</span>
-                            <span class="delivery-hero__title-line delivery-hero__title-line--accent">мебель под ключ</span>
-                        </h1>
-                        <p class="delivery-hero__subtitle">Доставка по городу, региону и по всей России. Профессиональная сборка на объекте, бережная упаковка и чёткие сроки.</p>
-                        <div class="delivery-hero__actions">
-                            <a href="#zones" class="delivery-hero__button delivery-hero__button--primary">
-                                <span>Узнать условия</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                            <a href="tel:+79785977442" class="delivery-hero__button delivery-hero__button--secondary">
-                                <span>Уточнить стоимость</span>
-                            </a>
-                        </div>
-                        <div class="delivery-hero__stats">
-                            <div class="delivery-hero__stat">
-                                <div class="delivery-hero__stat-number">По Крыму</div>
-                                <div class="delivery-hero__stat-label">и Севастополю</div>
-                            </div>
-                            <div class="delivery-hero__stat">
-                                <div class="delivery-hero__stat-number">По России</div>
-                                <div class="delivery-hero__stat-label">транспортными компаниями</div>
-                            </div>
-                            <div class="delivery-hero__stat">
-                                <div class="delivery-hero__stat-number">Сборка</div>
-                                <div class="delivery-hero__stat-label">на объекте</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="delivery-hero__visual">
-                        <div class="delivery-hero__image-wrapper">
-                            <div class="delivery-hero__image-placeholder">
-                                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="1" y="3" width="15" height="13"/>
-                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                                    <circle cx="5.5" cy="18.5" r="2.5"/>
-                                    <circle cx="18.5" cy="18.5" r="2.5"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+            <div class="delivery-hero__bg">
+                <div class="delivery-hero__noise"></div>
+                <div class="delivery-hero__glow delivery-hero__glow--1"></div>
+                <div class="delivery-hero__glow delivery-hero__glow--2"></div>
+                <div class="delivery-hero__lines">
+                    <span></span><span></span><span></span><span></span><span></span>
                 </div>
             </div>
-            <div class="delivery-hero__scroll-indicator">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-                </svg>
+            <div class="container delivery-hero__container">
+                <div class="delivery-hero__main">
+                    <p class="delivery-hero__lead">Доставка и сборка мебели</p>
+                    <h1 class="delivery-hero__title">От склада до вашей двери.<br><em>Соберём на месте.</em></h1>
+                    <p class="delivery-hero__text">По городу, Крыму и всей России. Бережная упаковка, чёткие сроки и профессиональная сборка на объекте.</p>
+                    <div class="delivery-hero__cta">
+                        <a href="#zones" class="delivery-hero__btn delivery-hero__btn--primary">Узнать сроки и цены</a>
+                        <a href="tel:+79785977442" class="delivery-hero__btn delivery-hero__btn--outline">+7 (978) 597-74-42</a>
+                    </div>
+                </div>
+                <ul class="delivery-hero__zones">
+                    <li class="delivery-hero__zone">
+                        <span class="delivery-hero__zone-icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                        </span>
+                        <span class="delivery-hero__zone-title">Севастополь и Крым</span>
+                        <span class="delivery-hero__zone-desc">Своя доставка, 1–4 дня</span>
+                    </li>
+                    <li class="delivery-hero__zone">
+                        <span class="delivery-hero__zone-icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        </span>
+                        <span class="delivery-hero__zone-title">Вся Россия</span>
+                        <span class="delivery-hero__zone-desc">СДЭК, Деловые Линии и др.</span>
+                    </li>
+                    <li class="delivery-hero__zone">
+                        <span class="delivery-hero__zone-icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                        </span>
+                        <span class="delivery-hero__zone-title">Сборка на объекте</span>
+                        <span class="delivery-hero__zone-desc">Под ключ</span>
+                    </li>
+                </ul>
             </div>
+            <a href="#zones" class="delivery-hero__scroll" aria-label="Прокрутить вниз">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
         </section>
 
         <!-- Как доставляем -->

@@ -60,7 +60,8 @@
 .featured-products__tab.active {
     background-color: var(--color-accent);
     color: var(--color-white);
-    box-shadow: 0 4px 12px rgba(198, 161, 91, 0.3);
+    box-shadow: 0 4px 16px rgba(198, 161, 91, 0.4);
+    transform: scale(1.02);
 }
 
 /* Кнопка "Смотреть всё" */
@@ -82,7 +83,8 @@
 .featured-products__view-all:hover {
     background-color: var(--color-accent);
     color: var(--color-white);
-    transform: translateX(4px);
+    transform: translateX(6px);
+    box-shadow: 0 4px 16px rgba(198, 161, 91, 0.3);
 }
 
 .featured-products__view-all svg {
@@ -237,17 +239,19 @@
     background-color: var(--color-white);
     border-radius: 16px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     position: relative;
     display: block;
     text-decoration: none;
     color: inherit;
+    border: 1px solid transparent;
 }
 
 .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+    border-color: rgba(198, 161, 91, 0.2);
 }
 
 /* Изображение товара */
@@ -266,7 +270,8 @@
 }
 
 .product-card:hover .product-card__img {
-    transform: scale(1.06);
+    transform: scale(1.1);
+    filter: brightness(1.05);
 }
 
 /* Градиентный оверлей при наведении */
@@ -447,8 +452,9 @@
 }
 
 .product-card__request:hover {
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 6px 20px rgba(198, 161, 91, 0.5);
+    transform: scale(1.15) rotate(-8deg);
+    box-shadow: 0 8px 25px rgba(198, 161, 91, 0.6);
+    background: linear-gradient(135deg, rgba(198, 161, 91, 1), rgba(198, 161, 91, 0.95));
 }
 
 .product-card__request:active {
