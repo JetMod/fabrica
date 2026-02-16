@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="header__top-inner">
                     <nav class="header__top-nav">
-                        <a href="office.html" class="header__top-link">Офис</a>
+                        <a href="office.html" class="header__top-link">О нас</a>
                         <a href="designers.html" class="header__top-link">Дизайнерам</a>
                         <a href="business.html" class="header__top-link">Бизнесу</a>
                         <a href="delivery.html" class="header__top-link header__top-link--active">Доставка</a>
@@ -95,7 +95,7 @@
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Ванна</a></li>
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Декор</a></li>
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">На улице</a></li>
-                        <li class="header__menu-item"><a href="office.html" class="header__menu-link">Офис</a></li>
+                        <li class="header__menu-item"><a href="office.html" class="header__menu-link">О нас</a></li>
                         <li class="header__menu-item"><a href="catalog.html" class="header__menu-link">Horeca</a></li>
                         <li class="header__menu-item"><a href="index.html#sale" class="header__menu-link header__menu-link--accent">Акции</a></li>
                     </ul>
@@ -120,7 +120,7 @@
                 <a href="catalog.html" class="header__mobile-link">Стены + Обои</a>
                 <a href="catalog.html" class="header__mobile-link">Панели</a>
                 <a href="catalog.html" class="header__mobile-link">Horeca</a>
-                <a href="office.html" class="header__mobile-link">Офис</a>
+                <a href="office.html" class="header__mobile-link">О нас</a>
                 <a href="index.html#sale" class="header__mobile-link header__mobile-link--accent">Акции</a>
                 <a href="index.html#about" class="header__mobile-link">О компании</a>
                 <a href="index.html#production" class="header__mobile-link">Производство</a>
@@ -356,59 +356,81 @@
             <div class="container">
                 <div class="contact__premium">
                     <div class="contact__header">
-                        <span class="contact__accent">Уточните условия</span>
-                        <h2 class="contact__title" id="contact-title">Рассчитаем доставку под ваш заказ</h2>
-                        <p class="contact__subtitle">Оставьте контакты — перезвоним и назовём стоимость и сроки доставки</p>
+                        <span class="contact__accent">Начните свой проект</span>
+                        <h2 class="contact__title" id="contact-title">Получите персональную консультацию</h2>
+                        <p class="contact__subtitle">Оставьте заявку, и наш эксперт свяжется с вами в течение 15 минут</p>
                     </div>
+
                     <form class="contact__form" id="contactForm">
                         <div class="contact__form-row">
                             <div class="contact__input-wrapper">
-                                <input type="text" id="name" name="name" class="contact__input" placeholder="Ваше имя" required>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    class="contact__input" 
+                                    placeholder="Ваше имя"
+                                    required
+                                >
                                 <span class="contact__input-border"></span>
                             </div>
                             <div class="contact__input-wrapper">
-                                <input type="tel" id="phone" name="phone" class="contact__input" placeholder="+7 (___) ___-__-__" required>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone" 
+                                    class="contact__input" 
+                                    placeholder="+7 (___) ___-__-__"
+                                    required
+                                >
                                 <span class="contact__input-border"></span>
                             </div>
                             <button type="submit" class="contact__button">
-                                <span>Узнать стоимость доставки</span>
+                                <span>Получить консультацию</span>
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
                             </button>
                         </div>
                         <p class="contact__privacy">
-                            Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="privacy_agreement" required style="margin-top: 2px; cursor: pointer;">
+                                <span>Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
                         </p>
                     </form>
+
+                    <!-- Преимущества -->
                     <div class="contact__benefits">
                         <div class="contact__benefit">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20 6L9 17L4 12"/>
                             </svg>
-                            <span>Ответ в день обращения</span>
+                            <span>Бесплатная консультация</span>
                         </div>
                         <div class="contact__benefit">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20 6L9 17L4 12"/>
                             </svg>
-                            <span>Расчёт под ваш адрес</span>
+                            <span>Расчёт в день обращения</span>
                         </div>
                         <div class="contact__benefit">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20 6L9 17L4 12"/>
                             </svg>
-                            <span>Сборка на объекте</span>
+                            <span>Гарантия качества</span>
                         </div>
                     </div>
+
+                    <!-- Сообщение об успешной отправке -->
                     <div class="contact__success" id="successMessage">
                         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M8 12l2 2 4-4"/>
                         </svg>
                         <div>
-                            <h3>Спасибо за заявку!</h3>
-                            <p>Мы перезвоним и рассчитаем доставку</p>
+                            <h3>Спасибо за обращение!</h3>
+                            <p>Наш менеджер свяжется с вами в ближайшее время</p>
                         </div>
                     </div>
                 </div>
@@ -417,7 +439,9 @@
     </main>
 
      <!-- Footer -->
-     <footer class="footer" id="contacts" role="contentinfo">
+ 
+    <!-- Footer -->
+    <footer class="footer" id="contacts" role="contentinfo">
         <!-- Верхняя секция с карточками -->
         <div class="footer__cta-section">
             <div class="container">
@@ -518,11 +542,11 @@
                         <div class="footer__menu-column">
                             <h4 class="footer__menu-title">Каталог</h4>
                             <ul class="footer__menu-list">
-                                <li><a href="#catalog" class="footer__menu-link">Мебель</a></li>
-                                <li><a href="#catalog" class="footer__menu-link">Освещение</a></li>
-                                <li><a href="#catalog" class="footer__menu-link">Декор</a></li>
-                                <li><a href="#catalog" class="footer__menu-link">Текстиль</a></li>
-                                <li><a href="#catalog" class="footer__menu-link">Напольные покрытия</a></li>
+                                <li><a href="catalog.html" class="footer__menu-link">Мебель</a></li>
+                                <li><a href="catalog.html" class="footer__menu-link">Освещение</a></li>
+                                <li><a href="catalog.html" class="footer__menu-link">Декор</a></li>
+                                <li><a href="catalog.html" class="footer__menu-link">Текстиль</a></li>
+                                <li><a href="catalog.html" class="footer__menu-link">Напольные покрытия</a></li>
                             </ul>
                         </div>
 
@@ -533,7 +557,7 @@
                                 <li><a href="designers.html" class="footer__menu-link">Для дизайнеров</a></li>
                                 <li><a href="business.html" class="footer__menu-link">Для бизнеса</a></li>
                                 <li><a href="#" class="footer__menu-link">Индивидуальный дизайн</a></li>
-                                <li><a href="#" class="footer__menu-link">Доставка и сборка</a></li>
+                                <li><a href="delivery.html" class="footer__menu-link">Доставка и сборка</a></li>
                                 <li><a href="#" class="footer__menu-link">Гарантия</a></li>
                             </ul>
                         </div>

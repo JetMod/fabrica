@@ -35,7 +35,7 @@
                 <div class="header__top-inner">
                     <!-- Верхнее меню -->
                     <nav class="header__top-nav">
-                        <a href="office.html" class="header__top-link">Офис</a>
+                        <a href="office.html" class="header__top-link">О нас</a>
                         <a href="designers.html" class="header__top-link">Дизайнерам</a>
                         <a href="business.html" class="header__top-link">Бизнесу</a>
                         <a href="delivery.html" class="header__top-link">Доставка</a>
@@ -138,7 +138,7 @@
                             <a href="catalog.html" class="header__menu-link">На улице</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="office.html" class="header__menu-link">Офис</a>
+                            <a href="office.html" class="header__menu-link">О нас</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="catalog.html" class="header__menu-link">Horeca</a>
@@ -173,7 +173,7 @@
                 <a href="catalog.html" class="header__mobile-link">Стены + Обои</a>
                 <a href="catalog.html" class="header__mobile-link">Панели</a>
                 <a href="catalog.html" class="header__mobile-link">Horeca</a>
-                <a href="office.html" class="header__mobile-link">Офис</a>
+                <a href="office.html" class="header__mobile-link">О нас</a>
                 <a href="#sale" class="header__mobile-link header__mobile-link--accent">Акции</a>
                 <a href="#about" class="header__mobile-link">О компании</a>
                 <a href="#production" class="header__mobile-link">Производство</a>
@@ -1237,7 +1237,10 @@
                             </button>
                         </div>
                         <p class="contact__privacy">
-                            Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                            <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                                <input type="checkbox" name="privacy_agreement" required style="margin-top: 2px; cursor: pointer;">
+                                <span>Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></span>
+                            </label>
                         </p>
                     </form>
 
@@ -1747,7 +1750,10 @@
                 </button>
 
                 <p class="callback-modal__privacy">
-                    Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                    <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" name="privacy_agreement" required style="margin-top: 2px; cursor: pointer;">
+                        <span>Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></span>
+                    </label>
                 </p>
             </form>
 
