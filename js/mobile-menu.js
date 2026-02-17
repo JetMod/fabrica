@@ -9,6 +9,7 @@ export function initMobileMenu() {
     const burger = document.querySelector('.header__burger');
     const mobileMenu = document.querySelector('.header__mobile-menu');
     const mobileOverlay = document.querySelector('.header__mobile-overlay');
+    const mobileClose = document.querySelector('.header__mobile-close');
     const mobileLinks = document.querySelectorAll('.header__mobile-link');
     
     if (!burger || !mobileMenu) return;
@@ -41,6 +42,11 @@ export function initMobileMenu() {
         document.body.classList.toggle('menu-open');
     });
     
+    // Закрытие меню при клике на кнопку закрытия
+    if (mobileClose) {
+        mobileClose.addEventListener('click', closeMenu);
+    }
+    
     // Закрытие меню при клике на overlay
     if (mobileOverlay) {
         mobileOverlay.addEventListener('click', closeMenu);
@@ -49,6 +55,13 @@ export function initMobileMenu() {
     // Закрытие меню при клике на ссылку
     mobileLinks.forEach(function(link) {
         link.addEventListener('click', closeMenu);
+    });
+    
+    // Закрытие меню при нажатии ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMenu();
+        }
     });
     
     // Закрытие меню при клике вне его

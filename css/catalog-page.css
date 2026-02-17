@@ -257,9 +257,8 @@ section.featured-products .product-card {
     visibility: visible !important;
     transform: translateY(0) !important;
     display: block !important;
-    flex: 0 0 calc((100% - 72px) / 4) !important;
-    min-width: calc((100% - 72px) / 4) !important;
-    max-width: calc((100% - 72px) / 4) !important;
+    /* Убираем !important для flex, min-width и max-width, чтобы медиа-запросы работали */
+    /* flex, min-width и max-width будут управляться через featured-products.css */
 }
 
 section.contact {

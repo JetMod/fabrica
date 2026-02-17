@@ -2,17 +2,18 @@
    Страница Доставка
    =================================== */
 
-/* Hero — тёмный полноэкранный блок */
+/* Hero — премиальный тёмный блок */
 .delivery-hero {
     position: relative;
+    min-height: 82vh;
     height: 82vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 140px 0 100px;
+    padding: 0px 0 60px;
     overflow: hidden;
-    background: #1a1816;
+    background: linear-gradient(165deg, #161412 0%, #1a1714 25%, #151310 50%, #1c1916 75%, #181513 100%);
     color: #f5f3ef;
 }
 
@@ -23,57 +24,293 @@
     overflow: hidden;
 }
 
+/* Перспективная сетка */
+.delivery-hero__grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image:
+        linear-gradient(rgba(245, 243, 239, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 243, 239, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Плавающие формы */
+.delivery-hero__shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Мягкие блобы — органические формы */
+.delivery-hero__blob {
+    position: absolute;
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+    animation: deliveryBlobFloat 25s ease-in-out infinite;
+}
+
+.delivery-hero__blob--1 {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 30% 30%, rgba(198, 161, 91, 0.25), transparent 60%);
+    top: 10%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.delivery-hero__blob--2 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle at 70% 30%, rgba(180, 150, 100, 0.2), transparent 55%);
+    bottom: 15%;
+    left: 8%;
+    animation-delay: -8s;
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+}
+
+.delivery-hero__blob--3 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 50% 50%, rgba(198, 161, 91, 0.15), transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: deliveryBlobPulse 20s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+@keyframes deliveryBlobFloat {
+    0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    33% { transform: translate(25px, -20px) rotate(5deg) scale(1.05); }
+    66% { transform: translate(-15px, 15px) rotate(-3deg) scale(0.98); }
+}
+
+@keyframes deliveryBlobPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.25; }
+}
+
+/* Кольца — геометрический акцент */
+.delivery-hero__ring {
+    position: absolute;
+    border: 1px solid rgba(245, 243, 239, 0.06);
+    border-radius: 50%;
+    animation: deliveryRingRotate 40s linear infinite;
+}
+
+.delivery-hero__ring--1 {
+    width: min(90vw, 600px);
+    height: min(90vw, 600px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.delivery-hero__ring--2 {
+    width: min(70vw, 420px);
+    height: min(70vw, 420px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    animation-duration: 55s;
+    animation-direction: reverse;
+    border-color: rgba(198, 161, 91, 0.08);
+}
+
+@keyframes deliveryRingRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Малые орбы — точечное свечение */
+.delivery-hero__orb {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(245, 243, 239, 0.4);
+    box-shadow: 0 0 20px rgba(198, 161, 91, 0.3);
+    animation: deliveryOrbTwinkle 4s ease-in-out infinite;
+}
+
+.delivery-hero__orb--1 {
+    top: 22%;
+    left: 18%;
+    animation-delay: 0s;
+}
+
+.delivery-hero__orb--2 {
+    bottom: 28%;
+    right: 22%;
+    animation-delay: 2s;
+}
+
+@keyframes deliveryOrbTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.3); }
+}
+
+/* Декоративные полосы по краям */
+.delivery-hero__edges {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.delivery-hero__edges::before,
+.delivery-hero__edges::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: min(180px, 14vw);
+    background:
+        linear-gradient(90deg, rgba(198, 161, 91, 0.06) 0%, transparent 100%),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 27px,
+            rgba(245, 243, 239, 0.055) 27px,
+            rgba(245, 243, 239, 0.055) 28px
+        );
+}
+
+.delivery-hero__edges::before {
+    left: 0;
+}
+
+.delivery-hero__edges::after {
+    right: 0;
+    left: auto;
+    background:
+        linear-gradient(270deg, rgba(198, 161, 91, 0.06) 0%, transparent 100%),
+        repeating-linear-gradient(
+            270deg,
+            transparent 0,
+            transparent 27px,
+            rgba(245, 243, 239, 0.055) 27px,
+            rgba(245, 243, 239, 0.055) 28px
+        );
+}
+
+/* Виньетка — затемнение по краям */
+.delivery-hero__vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: radial-gradient(
+        ellipse 80% 70% at 50% 45%,
+        transparent 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    pointer-events: none;
+}
+
+/* Мягкий меш-градиент для глубины */
+.delivery-hero__mesh {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(198, 161, 91, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 60% at 20% 80%, rgba(180, 150, 100, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(198, 161, 91, 0.04) 0%, transparent 45%);
+    pointer-events: none;
+}
+
+/* Точки-сетка: два слоя для плотности */
 .delivery-hero__noise {
     position: absolute;
     inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    z-index: 2;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(245, 243, 239, 0.08) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(245, 243, 239, 0.04) 1.5px, transparent 0);
+    background-size: 32px 32px, 48px 48px;
+    background-position: 0 0, 8px 8px;
+    opacity: 0.9;
     pointer-events: none;
 }
 
 .delivery-hero__glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.25;
+    filter: blur(120px);
+    opacity: 0.28;
+    z-index: 2;
     animation: deliveryHeroGlow 18s ease-in-out infinite;
 }
 
 .delivery-hero__glow--1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(198, 161, 91, 0.4) 0%, transparent 70%);
-    top: -150px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(198, 161, 91, 0.4) 0%, transparent 65%);
+    top: -140px;
     right: -100px;
 }
 
 .delivery-hero__glow--2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(198, 161, 91, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(180, 150, 100, 0.28) 0%, transparent 65%);
     bottom: -100px;
     left: -80px;
     animation-delay: -6s;
 }
 
-@keyframes deliveryHeroGlow {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
-    50% { transform: translate(20px, -20px) scale(1.1); opacity: 0.35; }
+.delivery-hero__glow--3 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(198, 161, 91, 0.18) 0%, transparent 65%);
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: deliveryHeroGlow3 20s ease-in-out infinite;
 }
 
+@keyframes deliveryHeroGlow {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.28; }
+    50% { transform: translate(15px, -15px) scale(1.08); opacity: 0.38; }
+}
+
+@keyframes deliveryHeroGlow3 {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.18; }
+    50% { transform: translateX(-50%) scale(1.12); opacity: 0.28; }
+}
+
+/* Диагональные полосы + тонкая сетка */
 .delivery-hero__lines {
     position: absolute;
     inset: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 8%;
+    z-index: 2;
+    background:
+        repeating-linear-gradient(
+            105deg,
+            transparent 0,
+            transparent 60px,
+            rgba(245, 243, 239, 0.035) 60px,
+            rgba(245, 243, 239, 0.035) 61px
+        ),
+        repeating-linear-gradient(
+            15deg,
+            transparent 0,
+            transparent 100px,
+            rgba(245, 243, 239, 0.02) 100px,
+            rgba(245, 243, 239, 0.02) 101px
+        );
     pointer-events: none;
 }
 
 .delivery-hero__lines span {
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, rgba(198, 161, 91, 0.12), transparent);
-    opacity: 0.6;
+    display: none;
 }
 
 .delivery-hero__container {
@@ -84,24 +321,24 @@
 
 .delivery-hero__main {
     text-align: center;
-    max-width: 720px;
-    margin: 0 auto 56px;
+    max-width: 620px;
+    margin: 0 auto 32px;
 }
 
 .delivery-hero__lead {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     color: var(--color-accent);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .delivery-hero__title {
-    font-size: clamp(36px, 5vw, 56px);
+    font-size: clamp(28px, 4vw, 42px);
     font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 24px;
+    line-height: 1.2;
+    margin-bottom: 14px;
     color: #f5f3ef;
 }
 
@@ -111,16 +348,16 @@
 }
 
 .delivery-hero__text {
-    font-size: clamp(16px, 1.8vw, 19px);
-    line-height: 1.6;
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.5;
     color: rgba(245, 243, 239, 0.75);
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 
 .delivery-hero__cta {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
 }
 
@@ -128,8 +365,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
-    font-size: 15px;
+    padding: 12px 24px;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 8px;
     text-decoration: none;
@@ -161,11 +398,11 @@
 .delivery-hero__zones {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 16px;
     list-style: none;
     margin: 0;
     padding: 0;
-    max-width: 900px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -174,10 +411,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 28px 20px;
+    padding: 18px 14px;
     background: rgba(245, 243, 239, 0.06);
     border: 1px solid rgba(245, 243, 239, 0.1);
-    border-radius: 16px;
+    border-radius: 12px;
     transition: all 0.3s ease;
 }
 
@@ -191,29 +428,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    margin-bottom: 16px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
     color: var(--color-accent);
     background: rgba(198, 161, 91, 0.12);
-    border-radius: 14px;
+    border-radius: 10px;
 }
 
 .delivery-hero__zone-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
     color: #f5f3ef;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .delivery-hero__zone-desc {
-    font-size: 14px;
+    font-size: 12px;
     color: rgba(245, 243, 239, 0.6);
 }
 
 .delivery-hero__scroll {
     position: absolute;
-    bottom: 32px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     color: rgba(245, 243, 239, 0.5);
@@ -233,11 +470,12 @@
 @media (max-width: 900px) {
     .delivery-hero__zones {
         grid-template-columns: 1fr;
-        max-width: 360px;
+        max-width: 300px;
+        gap: 12px;
     }
 
     .delivery-hero {
-        padding: 120px 0 80px;
+        padding: 90px 0 50px;
     }
 }
 

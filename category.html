@@ -26,6 +26,12 @@
                         <a href="projects.html" class="header__top-link">Проекты</a>
                     </nav>
                     <div class="header__top-right">
+                        <a href="favorites.html" class="header__top-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            Избранное
+                        </a>
                         <a href="catalog.html" class="header__top-link header__top-catalog">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 2h3v3H2V2zm5 0h3v3H7V2zm5 0h3v3h-3V2zM2 7h3v3H2V7zm5 0h3v3H7V7zm5 0h3v3h-3V7zM2 12h3v3H2v-3zm5 0h3v3H7v-3zm5 0h3v3h-3v-3z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -108,6 +114,7 @@
                 <input type="text" placeholder="Поиск" class="header__search-input">
             </div>
             <nav class="header__mobile-nav">
+                <a href="favorites.html" class="header__mobile-link">Избранное</a>
                 <a href="index.html#new" class="header__mobile-link">Новое</a>
                 <a href="catalog.html" class="header__mobile-link">Мебель</a>
                 <a href="catalog.html" class="header__mobile-link">Освещение</a>
@@ -161,7 +168,7 @@
             <div class="container">
                 <div class="category-products__grid">
                     <!-- Товар 1 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="1">
                         <div class="product-card__image">
                             <img src="img/16.webp" alt="Стол обеденный раскладной" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -189,7 +196,7 @@
                     </a>
 
                     <!-- Товар 2 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="2">
                         <div class="product-card__image">
                             <img src="img/19.webp" alt="Стол Orion раскладной круглый" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -216,7 +223,7 @@
                     </a>
 
                     <!-- Товар 3 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="3">
                         <div class="product-card__image">
                             <img src="img/16.webp" alt="Стол обеденный прямоугольный" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -243,7 +250,7 @@
                     </a>
 
                     <!-- Товар 4 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="4">
                         <div class="product-card__image">
                             <img src="img/16.webp" alt="Стол обеденный, ясень" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -270,7 +277,7 @@
                     </a>
 
                     <!-- Товар 5 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="5">
                         <div class="product-card__image">
                             <img src="img/19.webp" alt="Стол письменный" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -296,7 +303,7 @@
                     </a>
 
                     <!-- Товар 6 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="6">
                         <div class="product-card__image">
                             <img src="img/16.webp" alt="Стол журнальный" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -322,7 +329,7 @@
                     </a>
 
                     <!-- Товар 7 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="7">
                         <div class="product-card__image">
                             <img src="img/19.webp" alt="Стол консольный" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">
@@ -348,7 +355,7 @@
                     </a>
 
                     <!-- Товар 8 -->
-                    <a href="product.html" class="product-card">
+                    <a href="product.html" class="product-card" data-product-id="8">
                         <div class="product-card__image">
                             <img src="img/16.webp" alt="Стол обеденный овальный" class="product-card__img">
                             <button class="product-card__favorite" aria-label="В избранное" onclick="event.preventDefault(); event.stopPropagation();">

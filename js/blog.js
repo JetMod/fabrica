@@ -71,3 +71,111 @@ document.addEventListener('DOMContentLoaded', function() {
     // Инициализация при загрузке страницы
     filterArticles('all');
 });
+
+// Синхронизация высоты карточек блога на главной странице
+document.addEventListener('DOMContentLoaded', function() {
+    function syncBlogCardsHeight() {
+        // Работаем только на экранах <= 768px
+        if (window.innerWidth > 768) {
+            return;
+        }
+        
+        const blogGrid = document.querySelector('.blog__grid');
+        if (!blogGrid) return;
+        
+        const cards = blogGrid.querySelectorAll('.blog__card');
+        if (cards.length === 0) return;
+        
+        // Сбрасываем высоту для пересчета
+        cards.forEach(card => {
+            card.style.height = 'auto';
+        });
+        
+        // Находим максимальную высоту
+        let maxHeight = 0;
+        cards.forEach(card => {
+            const height = card.offsetHeight;
+            if (height > maxHeight) {
+                maxHeight = height;
+            }
+        });
+        
+        // Применяем максимальную высоту ко всем карточкам
+        if (maxHeight > 0) {
+            cards.forEach(card => {
+                card.style.height = maxHeight + 'px';
+            });
+        }
+    }
+    
+    // Вызываем при загрузке
+    syncBlogCardsHeight();
+    
+    // Вызываем при изменении размера окна
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            syncBlogCardsHeight();
+        }, 250);
+    });
+    
+    // Вызываем после загрузки изображений
+    window.addEventListener('load', function() {
+        setTimeout(syncBlogCardsHeight, 100);
+    });
+});
+
+// Синхронизация высоты карточек ценностей на главной странице
+document.addEventListener('DOMContentLoaded', function() {
+    function syncValuesCardsHeight() {
+        // Работаем только на экранах <= 768px
+        if (window.innerWidth > 768) {
+            return;
+        }
+        
+        const valuesGrid = document.querySelector('.about__values-grid');
+        if (!valuesGrid) return;
+        
+        const cards = valuesGrid.querySelectorAll('.about__value-card');
+        if (cards.length === 0) return;
+        
+        // Сбрасываем высоту для пересчета
+        cards.forEach(card => {
+            card.style.height = 'auto';
+        });
+        
+        // Находим максимальную высоту
+        let maxHeight = 0;
+        cards.forEach(card => {
+            const height = card.offsetHeight;
+            if (height > maxHeight) {
+                maxHeight = height;
+            }
+        });
+        
+        // Применяем максимальную высоту ко всем карточкам
+        if (maxHeight > 0) {
+            cards.forEach(card => {
+                card.style.height = maxHeight + 'px';
+            });
+        }
+    }
+    
+    // Вызываем при загрузке
+    syncValuesCardsHeight();
+    
+    // Вызываем при изменении размера окна
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+            syncValuesCardsHeight();
+        }, 250);
+    });
+    
+    // Вызываем после загрузки изображений
+    window.addEventListener('load', function() {
+        setTimeout(syncValuesCardsHeight, 100);
+    });
+});

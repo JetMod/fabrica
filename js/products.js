@@ -36,17 +36,50 @@ export function initFeaturedProductsSlider() {
         let currentPage = 0;
         let cardsPerPage = 4;
         
+        /**
+         * Определяет количество видимых карточек на основе реальной ширины контейнера
+         * Это гарантирует синхронизацию с CSS медиа-запросами
+         */
         function updateCardsPerPage() {
-            const width = window.innerWidth;
-            if (width <= 480) {
+            if (cards.length === 0) {
                 cardsPerPage = 1;
-            } else if (width <= 768) {
-                cardsPerPage = 2;
-            } else if (width <= 1024) {
-                cardsPerPage = 3;
-            } else {
-                cardsPerPage = 4;
+                return;
             }
+            
+            const wrapper = tabContent.querySelector('.featured-products__slider-wrapper');
+            if (!wrapper) {
+                cardsPerPage = 4;
+                return;
+            }
+            
+            const wrapperWidth = wrapper.offsetWidth;
+            const firstCard = cards[0];
+            const cardWidth = firstCard.offsetWidth;
+            const computedGap = parseFloat(getComputedStyle(grid).gap) || 24;
+            
+            // Рассчитываем сколько карточек помещается в контейнер
+            // Формула: (ширина контейнера + gap) / (ширина карточки + gap)
+            if (cardWidth > 0) {
+                const visibleCards = Math.floor((wrapperWidth + computedGap) / (cardWidth + computedGap));
+                cardsPerPage = Math.max(1, Math.min(visibleCards, cards.length));
+            } else {
+                // Fallback на основе ширины окна
+                const width = window.innerWidth;
+                if (width <= 480) {
+                    cardsPerPage = 1;
+                } else if (width <= 768) {
+                    cardsPerPage = 2;
+                } else if (width <= 1024) {
+                    cardsPerPage = 3;
+                } else {
+                    cardsPerPage = 4;
+                }
+            }
+        }
+        
+        function getGap() {
+            const computedGap = parseFloat(getComputedStyle(grid).gap) || 24;
+            return computedGap;
         }
         
         function getTotalPages() {
@@ -101,6 +134,9 @@ export function initFeaturedProductsSlider() {
         }
         
         function goToPage(page) {
+            // Убеждаемся, что cardsPerPage актуален перед расчетом
+            updateCardsPerPage();
+            
             const totalPages = getTotalPages();
             if (totalPages === 0) return;
             
@@ -109,8 +145,12 @@ export function initFeaturedProductsSlider() {
             
             currentPage = page;
             
+            if (cards.length === 0) return;
+            
             const cardWidth = cards[0].offsetWidth;
-            const gapValue = parseFloat(getComputedStyle(grid).gap) || 24;
+            const gapValue = getGap();
+            
+            // Рассчитываем смещение: перемещаем на количество карточек * текущая страница
             const offset = -(cardWidth + gapValue) * cardsPerPage * currentPage;
             
             if (cardWidth > 0) {
@@ -157,22 +197,46 @@ export function initFeaturedProductsSlider() {
         }, { passive: true });
         
         function refresh(resetPage) {
-            updateCardsPerPage();
-            if (resetPage) {
-                currentPage = 0;
-            }
-            renderDots();
-            goToPage(currentPage);
+            // Двойной requestAnimationFrame для гарантированного пересчета размеров после применения CSS
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    updateCardsPerPage();
+                    if (resetPage) {
+                        currentPage = 0;
+                    }
+                    renderDots();
+                    goToPage(currentPage);
+                });
+            });
         }
         
         featuredProductsSliderState.set(tabContent, { refresh });
-        refresh(true);
+        
+        // Инициализация с задержкой для корректного расчета размеров после загрузки CSS
+        setTimeout(function() {
+            refresh(true);
+        }, 150);
         
         const handleResizeProducts = debounce(function() {
+            // При изменении размера окна нужно пересчитать все заново
             refresh(true);
         }, 250);
         
         window.addEventListener('resize', handleResizeProducts, { passive: true });
+        
+        // Также слушаем изменения размера через ResizeObserver для более точного отслеживания
+        if (typeof ResizeObserver !== 'undefined') {
+            const resizeObserver = new ResizeObserver(function(entries) {
+                for (let i = 0; i < entries.length; i += 1) {
+                    handleResizeProducts();
+                }
+            });
+            
+            const wrapper = tabContent.querySelector('.featured-products__slider-wrapper');
+            if (wrapper) {
+                resizeObserver.observe(wrapper);
+            }
+        }
     });
 }
 
@@ -206,7 +270,10 @@ export function initFeaturedProductsTabs() {
             const targetContent = document.querySelector('[data-content="' + targetTab + '"]');
             if (targetContent) {
                 targetContent.classList.add('active');
-                refreshFeaturedProductsSlider(targetContent, true);
+                // Небольшая задержка для пересчета размеров после показа контента
+                setTimeout(function() {
+                    refreshFeaturedProductsSlider(targetContent, true);
+                }, 50);
             }
         });
     });
@@ -214,24 +281,9 @@ export function initFeaturedProductsTabs() {
 
 /**
  * Инициализация карточек товаров
+ * (кнопки избранного обрабатываются в favorites.js)
  */
 export function initProductCards() {
-    // Кнопки избранного
-    const favoriteButtons = document.querySelectorAll('.product-card__favorite');
-    
-    favoriteButtons.forEach(function(button) {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.classList.toggle('active');
-            
-            // Добавляем анимацию
-            this.style.animation = 'none';
-            setTimeout(function() {
-                button.style.animation = '';
-            }, 10);
-        });
-    });
-    
     // Кнопки «Узнать цену» — открывают модальное окно обратного звонка (data-callback-modal)
     const requestButtons = document.querySelectorAll('.product-card__request');
     requestButtons.forEach(function(button) {

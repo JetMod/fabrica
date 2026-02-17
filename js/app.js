@@ -11,6 +11,8 @@ import { initChatWidget } from './chat-widget.js';
 import { initPhoneMask, initContactForm } from './form-validation.js';
 import { initScrollTop, initScrollAnimations, initSmoothScroll } from './scroll.js';
 import { initFeaturedProductsSlider, initFeaturedProductsTabs, initProductCards } from './products.js';
+import { initFavorites } from './favorites.js';
+import { initSearch } from './search.js';
 import { initCallbackModal } from './callback-modal.js';
 import { initChatModal } from './chat-modal.js';
 import { initFAQ } from './faq.js';
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initFeaturedProductsSlider();
     initFeaturedProductsTabs();
     initProductCards();
+    initFavorites();
+    initSearch();
     initFAQ();
     
     // Отложенная инициализация неприоритетных компонентов

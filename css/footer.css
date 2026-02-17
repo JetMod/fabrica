@@ -445,6 +445,13 @@
         grid-template-columns: 1fr;
         gap: 32px;
     }
+    
+    /* Скрываем колонки "О компании", "Каталог" и "Услуги" в мобильной версии */
+    .footer__menu-column:nth-child(1),
+    .footer__menu-column:nth-child(2),
+    .footer__menu-column:nth-child(3) {
+        display: none;
+    }
 
     .footer__menu-title {
         font-size: 11px;
