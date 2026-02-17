@@ -267,7 +267,7 @@
     box-shadow: 0 4px 15px rgba(198, 161, 91, 0.2);
 }
 
-.hero__nav-btn::before {
+    .hero__nav-btn::before {
     content: '';
     position: absolute;
     inset: -2px;
@@ -276,6 +276,7 @@
     background: linear-gradient(135deg, var(--color-accent), transparent);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -457,64 +458,228 @@
 @media (max-width: 768px) {
     .hero {
         min-height: auto;
+        height: auto;
     }
     
     .hero__slider {
         height: auto;
         min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero__slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .hero__slide.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1;
+        position: relative;
     }
     
     .hero__slide-content {
         flex-direction: column;
+        height: 100%;
+        min-height: 100vh;
+        width: 100%;
     }
     
-    .hero__text-side {
-        flex: 0 0 auto;
-        padding: 40px 24px;
-        min-height: 50vh;
-    }
-    
+    /* Изображение сверху */
     .hero__image-side {
         flex: 0 0 auto;
+        order: 1;
         min-height: 50vh;
+        max-height: 60vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
     }
     
-    /* Усиливаем градиент на мобильных для лучшей видимости */
+    .hero__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        animation: none;
+        display: block;
+    }
+    
+    .hero__slide.active .hero__image {
+        animation: fadeInImage 0.6s ease-out forwards;
+    }
+    
+    @keyframes fadeInImage {
+        0% {
+            opacity: 0;
+            transform: scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    /* Улучшенный градиент для мобильных */
     .hero__image-side::before {
         background: linear-gradient(
-            135deg,
-            rgba(198, 161, 91, 0.25) 0%,
-            transparent 50%,
-            rgba(45, 45, 45, 0.4) 100%
+            180deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            transparent 30%,
+            transparent 70%,
+            rgba(245, 243, 239, 0.3) 100%
         );
+        opacity: 1;
     }
     
     .hero__image-side::after {
-        inset: 10px;
+        display: none;
+    }
+    
+    /* Текст снизу */
+    .hero__text-side {
+        flex: 0 0 auto;
+        order: 2;
+        padding: 32px 24px 40px;
+        min-height: auto;
+        width: 100%;
+        background: linear-gradient(
+            180deg,
+            rgba(245, 243, 239, 0.95) 0%,
+            var(--color-background) 100%
+        );
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .hero__text-wrapper {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero__slide.active .hero__text-wrapper {
+        animation: fadeInUpMobile 0.6s ease-out 0.2s both;
+    }
+    
+    @keyframes fadeInUpMobile {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .hero__title {
+        font-size: clamp(22px, 5vw, 32px);
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        text-align: center;
+    }
+    
+    .hero__title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+    }
+    
+    .hero__slide.active .hero__title::after {
+        animation: expandLineMobile 0.6s ease-out 0.4s forwards;
+    }
+    
+    @keyframes expandLineMobile {
+        0% {
+            opacity: 0;
+            transform: translateX(-50%) scaleX(0);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(-50%) scaleX(1);
+        }
+    }
+    
+    .hero__subtitle {
+        font-size: clamp(14px, 3.5vw, 18px);
+        margin-bottom: 28px;
+        text-align: center;
+        line-height: 1.6;
+    }
+    
+    .hero__slide.active .hero__subtitle {
+        animation: fadeInUpMobile 0.6s ease-out 0.3s both;
+    }
+    
+    .hero__button {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 16px 32px;
+        font-size: 13px;
+        display: block;
+    }
+    
+    .hero__slide.active .hero__button {
+        animation: fadeInUpMobile 0.6s ease-out 0.4s both;
     }
     
     .hero__navigation {
-        bottom: 30px;
+        bottom: 20px;
+        gap: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        position: absolute;
     }
     
     .hero__nav-btn {
         width: 44px;
         height: 44px;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        touch-action: manipulation;
+    }
+    
+    .hero__nav-btn svg {
+        width: 20px;
+        height: 20px;
     }
     
     .hero__dots {
         left: 50%;
-        bottom: 100px;
+        transform: translateX(-50%);
+        bottom: 90px;
+        gap: 10px;
+        z-index: 20;
+        position: absolute;
+    }
+    
+    .hero__dot {
+        touch-action: manipulation;
     }
     
     .hero__counter {
         top: 15px;
         right: 20px;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         padding: 8px 12px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 20;
+        position: absolute;
     }
     
     .hero__counter-current {
@@ -527,14 +692,24 @@
 }
 
 @media (max-width: 480px) {
+    .hero__image-side {
+        min-height: 45vh;
+        max-height: 55vh;
+    }
+    
     .hero__text-side {
-        padding: 30px 20px;
+        padding: 28px 20px 36px;
+    }
+    
+    .hero__text-wrapper {
+        padding: 0;
     }
     
     .hero__title {
-        font-size: 22px;
-        margin-bottom: 16px;
-        padding-bottom: 16px;
+        font-size: 20px;
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+        line-height: 1.3;
     }
     
     .hero__title::after {
@@ -545,54 +720,60 @@
     .hero__subtitle {
         font-size: 14px;
         margin-bottom: 24px;
+        line-height: 1.5;
     }
     
     .hero__button {
         width: 100%;
-        padding: 14px 32px;
+        max-width: 100%;
+        padding: 14px 28px;
         font-size: 12px;
+        letter-spacing: 0.8px;
     }
     
     .hero__navigation {
-        bottom: 20px;
-        gap: 12px;
+        bottom: 16px;
+        gap: 10px;
     }
     
     .hero__nav-btn {
         width: 40px;
         height: 40px;
+        border-width: 1.5px;
     }
     
     .hero__nav-btn svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
     
     .hero__dots {
-        bottom: 80px;
+        bottom: 75px;
         gap: 8px;
     }
     
     .hero__dot {
         width: 10px;
         height: 10px;
+        border-width: 1.5px;
     }
     
     .hero__counter {
-        top: 15px;
-        right: 15px;
+        top: 12px;
+        right: 12px;
+        padding: 6px 10px;
     }
     
     .hero__counter-current {
-        font-size: 28px;
+        font-size: 26px;
     }
     
     .hero__counter-separator {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .hero__counter-total {
-        font-size: 14px;
-        margin-bottom: 6px;
+        font-size: 13px;
+        margin-bottom: 5px;
     }
 }
