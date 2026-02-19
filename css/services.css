@@ -121,6 +121,18 @@
     flex-direction: column;
 }
 
+/* Карточка как ссылка */
+.services__card--link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.services__card--link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .services__card:hover {
     transform: translateY(-12px);
     box-shadow: 0 16px 40px rgba(198, 161, 91, 0.15);
@@ -181,6 +193,25 @@
     margin: 0 0 12px 0;
     line-height: 1.35;
     min-height: 48px;
+    position: relative;
+    padding-right: 20px;
+}
+
+/* Стрелка для кликабельных карточек */
+.services__card--link .services__card-title::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--color-accent);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-5px);
+}
+
+.services__card--link:hover .services__card-title::after {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .services__card-text {

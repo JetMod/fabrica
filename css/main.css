@@ -33,6 +33,7 @@
 @import url('category.css');
 @import url('product-single.css');
 @import url('blog-single.css');
+@import url('service-single.css');
 
 /* Анимации */
 @import url('animations.css');

@@ -17,6 +17,7 @@ import { initCallbackModal } from './callback-modal.js';
 import { initChatModal } from './chat-modal.js';
 import { initFAQ } from './faq.js';
 import { initProjectCards } from './projects.js';
+import { initServiceFAQ } from './service-faq.js';
 
 /**
  * Инициализация всех компонентов при загрузке страницы
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFavorites();
     initSearch();
     initFAQ();
+    initServiceFAQ();
     
     // Отложенная инициализация неприоритетных компонентов
     if ('requestIdleCallback' in window) {
