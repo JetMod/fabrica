@@ -16,6 +16,7 @@ import { initSearch } from './search.js';
 import { initCallbackModal } from './callback-modal.js';
 import { initChatModal } from './chat-modal.js';
 import { initFAQ } from './faq.js';
+import { initProjectCards } from './projects.js';
 
 /**
  * Инициализация всех компонентов при загрузке страницы
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFeaturedProductsSlider();
     initFeaturedProductsTabs();
     initProductCards();
+    initProjectCards();
     initFavorites();
     initSearch();
     initFAQ();

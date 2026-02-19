@@ -289,9 +289,32 @@ export function initProductCards() {
     requestButtons.forEach(function(button) {
         button.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Останавливаем всплытие, чтобы не открывалась страница товара
             this.style.transform = 'scale(0.9)';
             setTimeout(function() { button.style.transform = ''; }, 200);
             // Открытие модалки обратного звонка обрабатывается в callback-modal.js по [data-callback-modal]
+        });
+    });
+
+    // Клик на карточку товара — переход на страницу товара
+    const productCards = document.querySelectorAll('.product-card[data-product-id]');
+    productCards.forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            // Проверяем, не был ли клик на интерактивном элементе (кнопка, ссылка)
+            const target = e.target;
+            const isInteractive = target.closest('button') || 
+                                 target.closest('a') || 
+                                 target.closest('.product-card__favorite') ||
+                                 target.closest('.product-card__request');
+            
+            if (isInteractive) {
+                return; // Не обрабатываем клик, если он был на интерактивном элементе
+            }
+
+            const productId = card.getAttribute('data-product-id');
+            if (productId) {
+                window.location.href = 'product.html?id=' + encodeURIComponent(productId);
+            }
         });
     });
 }

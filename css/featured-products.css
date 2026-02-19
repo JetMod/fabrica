@@ -2,7 +2,7 @@
    Каталог популярных товаров
    =================================== */
 
-.featured-products {
+   .featured-products {
     padding: var(--spacing-xxl) 0;
     background-color: var(--color-background);
     position: relative;
@@ -248,6 +248,7 @@ section.featured-products .featured-products__grid .product-card {
     text-decoration: none;
     color: inherit;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .product-card:hover {

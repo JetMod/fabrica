@@ -8,7 +8,7 @@
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding: 120px 0 100px;
+    padding: 0px 0 100px;
     overflow: hidden;
     background: linear-gradient(135deg, #F5F3EF 0%, #FFFFFF 50%, #F8F6F2 100%);
 }

@@ -61,11 +61,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Избранное
-    const favoriteBtn = document.getElementById('addToFavorites');
-    if (favoriteBtn) {
-        favoriteBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-        });
-    }
+    // Избранное обрабатывается в favorites.js (initFavorites из app.js)
 });

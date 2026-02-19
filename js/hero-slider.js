@@ -15,9 +15,13 @@ export function initHeroSlider() {
     const dots = document.querySelectorAll('.hero__dot');
     const counterCurrent = document.querySelector('.hero__counter-current');
     
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    
     let currentSlide = 0;
     let autoplayInterval;
     const autoplayDelay = 5000; // 5 секунд
+    let lastSwipeTime = 0;
+    const swipeCooldown = 400; // мс — защита от случайных свайпов при скролле
     
     // Функция переключения слайда
     function goToSlide(index) {
@@ -42,8 +46,10 @@ export function initHeroSlider() {
             counterCurrent.textContent = slideNumber;
         }
         
-        // Перезапускаем автопрокрутку
-        resetAutoplay();
+        // Перезапускаем автопрокрутку (только на десктопе)
+        if (!isMobile) {
+            resetAutoplay();
+        }
     }
     
     // Следующий слайд
@@ -105,36 +111,46 @@ export function initHeroSlider() {
     slider.addEventListener('mouseenter', stopAutoplay);
     slider.addEventListener('mouseleave', startAutoplay);
     
-    // Свайпы на мобильных устройствах
+    // Свайпы на мобильных устройствах (только горизонтальные — вертикальный скролл не переключает слайды)
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
+    let touchEndY = 0;
     
     slider.addEventListener('touchstart', function(e) {
         touchStartX = e.changedTouches[0].screenX;
-        stopAutoplay();
+        touchStartY = e.changedTouches[0].screenY;
+        if (!isMobile) stopAutoplay();
     }, { passive: true });
     
     slider.addEventListener('touchend', function(e) {
         touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
         handleSwipe();
-        startAutoplay();
+        if (!isMobile) startAutoplay();
     }, { passive: true });
     
     function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
+        const now = Date.now();
+        if (isMobile && (now - lastSwipeTime) < swipeCooldown) return; // кулдаун — не срабатывать при быстрых касаниях при скролле
         
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                // Свайп влево - следующий слайд
+        const swipeThreshold = isMobile ? 80 : 50; // на мобильном выше порог — только явный свайп
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+        const absDiffX = Math.abs(diffX);
+        const absDiffY = Math.abs(diffY);
+        
+        // Свайп только если горизонтальное движение доминирует над вертикальным
+        if (absDiffX > swipeThreshold && absDiffX > absDiffY) {
+            lastSwipeTime = now;
+            if (diffX > 0) {
                 nextSlide();
             } else {
-                // Свайп вправо - предыдущий слайд
                 prevSlide();
             }
         }
     }
     
-    // Запускаем автопрокрутку
-    startAutoplay();
+    // Запускаем автопрокрутку только на десктопе
+    if (!isMobile) startAutoplay();
 }
