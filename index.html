@@ -26,7 +26,7 @@
     <!-- Стили -->
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="page-index">
     <!-- Header -->
     <header class="header">
         <!-- Верхний хедер -->
@@ -71,7 +71,7 @@
                         <a href="index.html" class="header__logo">
                             <img src="img/logo.webp" alt="ФАБРИКА интерьера" class="header__logo-img">
                         </a>
-                        <p class="header__tagline">Дизайнерская мебель<br>для дома, работы и отдыха</p>
+                        <a href="index.html" class="header__tagline">Дизайнерская мебель<br>для дома, работы и отдыха</a>
                     </div>
 
                     <!-- Поиск -->
@@ -289,10 +289,26 @@
                     muted
                     loop
                     playsinline
+                    disablePictureInPicture
+                    disableRemotePlayback
                     aria-label="Фоновое видео"
                 ></video>
                 <div class="video-hero__overlay" aria-hidden="true"></div>
             </div>
+            <div class="video-hero__content">
+                <div class="video-hero__content-inner">
+                    <div class="container">
+                        <p class="video-hero__tagline">Фабрика <span class="video-hero__tagline-accent">интерьера</span></p>
+                        <h1 class="video-hero__title">Дизайнерская мебель в Крыму</h1>
+                        <p class="video-hero__text">Мебель на заказ и интерьеры под ключ. Отражаем ваш вкус.</p>
+                        <a href="catalog.html" class="video-hero__cta button button--primary">В каталог</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#about" class="video-hero__scroll-hint" aria-label="Листайте вниз">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                <span>Листайте вниз</span>
+            </a>
         </section>
 
         <!-- Заголовок блока акций -->

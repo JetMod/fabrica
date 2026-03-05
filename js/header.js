@@ -2,7 +2,7 @@
 // Header скролл эффект
 // ===================================
 
-import { throttle } from './utils.js';
+import { throttle, debounce } from './utils.js';
 
 /**
  * Инициализация эффекта прокрутки для header
@@ -11,24 +11,35 @@ export function initHeaderScroll() {
     const header = document.querySelector('.header');
     if (!header) return;
     
-    let lastScroll = 0;
-    const scrollThreshold = 50;
+    const isIndexPage = document.body.classList.contains('page-index');
+    const scrollThreshold = isIndexPage ? 120 : 50;
     
-    // Используем throttle для оптимизации
-    const handleScroll = throttle(function() {
+    function updateHeaderState() {
         const currentScroll = window.pageYOffset;
-        
-        // Добавляем класс scrolled при прокрутке вниз
         if (currentScroll > scrollThreshold) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
-    }, 100);
+    }
     
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // На главной при загрузке без скролла — без класса scrolled (прозрачный хедер)
+    if (isIndexPage && window.pageYOffset <= scrollThreshold) {
+        header.classList.remove('scrolled');
+    }
+    
+    // Во время скролла — throttle, чтобы не дёргать DOM слишком часто
+    const handleScroll = throttle(updateHeaderState, 100);
+    
+    // После окончания скролла — финальная проверка (убирает "залипание" при резком скролле вверх)
+    const handleScrollEnd = debounce(updateHeaderState, 150);
+    
+    function onScroll() {
+        handleScroll();
+        handleScrollEnd();
+    }
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
     
     // Добавляем плавную анимацию при наведении на логотип
     const logo = document.querySelector('.header__logo');
