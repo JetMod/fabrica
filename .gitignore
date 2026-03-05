@@ -31,3 +31,7 @@ build/
 wp-config.php
 wp-content/uploads/
 wp-content/cache/
+
+# Большие видео (лимит GitHub 100 MB)
+video/hero.mov
+*.mov
