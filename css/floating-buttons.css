@@ -520,9 +520,7 @@
 
 @media (max-width: 768px) {
     .chat-widget {
-        bottom: 160px;
-        right: 12px;
-        left: auto;
+        display: none !important;
     }
     
     .chat-widget__content {

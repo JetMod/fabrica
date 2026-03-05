@@ -21,7 +21,7 @@
     
     <!-- Preload критических ресурсов -->
     <link rel="preload" as="image" href="img/logo.webp">
-    <link rel="preload" as="video" href="video/1.MP4">
+    <link rel="preload" as="video" href="video/hero.mp4">
     
     <!-- Стили -->
     <link rel="stylesheet" href="css/main.css">
@@ -120,30 +120,19 @@
             <div class="container">
                 <nav class="header__nav">
                     <ul class="header__menu">
-                        <li class="header__menu-item">
-                            <a href="#new" class="header__menu-link">Новое</a>
-                        </li>
+                      
                         <li class="header__menu-item">
                             <a href="#mebel" class="header__menu-link">Мебель</a>
                         </li>
                         <li class="header__menu-item">
-                            <a href="catalog.html" class="header__menu-link">Гостинная</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="catalog.html" class="header__menu-link">Столовая</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="catalog.html" class="header__menu-link">Спальна</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="catalog.html" class="header__menu-link">Ванна</a>
+                            <a href="catalog.html" class="header__menu-link">Посуда</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="catalog.html" class="header__menu-link">Декор</a>
                         </li>
-                        <li class="header__menu-item">
+                        <!-- <li class="header__menu-item">
                             <a href="catalog.html" class="header__menu-link">На улице</a>
-                        </li>
+                        </li> -->
                         <li class="header__menu-item">
                             <a href="services.html" class="header__menu-link">Услуги</a>
                         </li>
@@ -290,7 +279,30 @@
 
     <!-- Основной контент -->
     <main class="main" role="main" id="main-content">
-        <!-- Hero секция -->
+        <!-- Видео Hero — полноэкранное видео -->
+        <section class="video-hero" aria-label="Видео ФАБРИКА интерьера">
+            <div class="video-hero__wrapper">
+                <video
+                    class="video-hero__video"
+                    src="video/hero.mov"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    aria-label="Фоновое видео"
+                ></video>
+                <div class="video-hero__overlay" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- Заголовок блока акций -->
+        <div class="hero-promo-intro">
+            <p class="hero-promo-intro__label">Акции и новинки</p>
+            <h2 class="hero-promo-intro__title">Специальные предложения</h2>
+            <p class="hero-promo-intro__subtitle">Выгодные условия на мебель и интерьерные решения</p>
+        </div>
+
+        <!-- Hero секция — слайдер акций -->
         <section class="hero" aria-label="Промо-слайдер с акциями и трендами">
             <div class="hero__slider">
                 <!-- Слайд 1 - Акция -->
@@ -431,9 +443,9 @@
                     </div>
                 </div>
 
-                <!-- Ключевые ценности -->
+                <!-- Ключевые приемущества -->
                 <div class="about__values">
-                    <h3 class="about__values-title">Наши ценности</h3>
+                    <h3 class="about__values-title">Наши приемущества</h3>
                     <div class="about__values-grid">
                         <div class="about__value-card">
                             <div class="about__value-icon">
@@ -482,13 +494,13 @@
         </section>
 
         <!-- Каталог популярных товаров -->
-        <section class="featured-products animate-on-scroll" aria-label="Популярные позиции каталога — скидки и тренды">
+        <section class="featured-products animate-on-scroll" aria-label="Популярные позиции каталога — скидки и новинки">
             <div class="container">
                 <!-- Заголовок с табами -->
                 <div class="featured-products__header">
                     <div class="featured-products__tabs">
                         <button class="featured-products__tab active" data-tab="sale">Скидки и акции</button>
-                        <button class="featured-products__tab" data-tab="new">Тренды</button>
+                        <button class="featured-products__tab" data-tab="new">Новинки</button>
                     </div>
                     <a href="catalog.html" class="featured-products__view-all">
                         Смотреть всё
@@ -743,7 +755,7 @@
                         <div class="featured-products__dots"></div>
                     </div>
 
-                    <!-- Таб: Тренды -->
+                    <!-- Таб: Новинки -->
                     <div class="featured-products__tab-content" data-content="new">
                         <div class="featured-products__slider">
                             <button class="featured-products__nav featured-products__nav--prev" aria-label="Предыдущий">
@@ -1862,7 +1874,7 @@
                 <img src="img/logo.webp" alt="Менеджер" class="chat-widget__avatar-img">
             </div>
             <div class="chat-widget__info">
-                <div class="chat-widget__name">Наталия, ведущий менеджер</div>
+                <div class="chat-widget__name">Александр, ведущий менеджер</div>
                 <div class="chat-widget__message">Мы тут! Всегда общение.</div>
             </div>
             <button class="chat-widget__button" id="chatButton" aria-label="Открыть чат">
@@ -1964,11 +1976,11 @@
                 <div class="chat-modal__header-content">
                     <div class="chat-modal__manager-info">
                         <div class="chat-modal__avatar">
-                            <img src="img/logo.webp" alt="Наталия" class="chat-modal__avatar-img">
+                            <img src="img/logo.webp" alt="Александр" class="chat-modal__avatar-img">
                             <span class="chat-modal__status"></span>
                         </div>
                         <div class="chat-modal__manager-text">
-                            <div class="chat-modal__manager-name">Наталия, ведущий менеджер</div>
+                            <div class="chat-modal__manager-name">Александр, ведущий менеджер</div>
                             <div class="chat-modal__manager-status">Мы тут! Всегда общение.</div>
                         </div>
                     </div>

@@ -2,6 +2,66 @@
    Hero секция - Слайдер (Улучшенная версия)
    =================================== */
 
+/* Заголовок блока акций — объявление между видео и слайдером */
+.hero-promo-intro {
+    text-align: center;
+    padding: 0 24px 32px;
+    background-color: var(--color-background);
+}
+
+.hero-promo-intro__label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin: 0;
+}
+
+.hero-promo-intro__title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.hero-promo-intro__subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-gray);
+    margin: 0;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-promo-intro {
+        padding: 0 20px 24px;
+    }
+    
+    .hero-promo-intro__label {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+    }
+    
+    .hero-promo-intro__subtitle {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-promo-intro {
+        padding: 0 16px 20px;
+    }
+    
+    .hero-promo-intro__title {
+        font-size: 24px;
+    }
+}
+
 .hero {
     position: relative;
     min-height: 80vh;
