@@ -1,0 +1,484 @@
+/* ===================================
+   Модальное окно чата
+   =================================== */
+
+.chat-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    padding-bottom: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.chat-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chat-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.chat-modal__content {
+    position: relative;
+    background: var(--color-white);
+    border-radius: 16px 0 0 16px;
+    max-width: 380px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: -4px 0 40px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-modal.active .chat-modal__content {
+    transform: translateX(0);
+}
+
+/* Заголовок с информацией о менеджере */
+.chat-modal__header {
+    background: var(--color-white);
+    padding: 16px;
+    border-bottom: 1px solid rgba(45, 45, 45, 0.1);
+}
+
+.chat-modal__header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-modal__manager-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.chat-modal__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--color-accent);
+    background: var(--color-white);
+    position: relative;
+}
+
+.chat-modal__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-modal__status {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 14px;
+    height: 14px;
+    background: #4CAF50;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    animation: pulseGreen 2s ease-in-out infinite;
+}
+
+@keyframes pulseGreen {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+    }
+}
+
+.chat-modal__manager-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.chat-modal__manager-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.chat-modal__manager-status {
+    font-size: 12px;
+    color: var(--color-gray);
+    line-height: 1.3;
+}
+
+.chat-modal__close-header {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(45, 45, 45, 0.05);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.chat-modal__close-header:hover {
+    background: rgba(45, 45, 45, 0.1);
+    transform: rotate(90deg);
+}
+
+.chat-modal__close-header:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+.chat-modal__close-header svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Основной контент */
+.chat-modal__body {
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Форма */
+.chat-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.chat-modal__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chat-modal__input,
+.chat-modal__textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: none;
+    border-bottom: 2px solid rgba(45, 45, 45, 0.2);
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+}
+
+.chat-modal__textarea {
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+.chat-modal__input::placeholder,
+.chat-modal__textarea::placeholder {
+    color: rgba(45, 45, 45, 0.5);
+}
+
+.chat-modal__input:focus,
+.chat-modal__textarea:focus {
+    border-bottom-color: var(--color-accent);
+    background: rgba(198, 161, 91, 0.02);
+}
+
+.chat-modal__input.error,
+.chat-modal__textarea.error {
+    border-bottom-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.02);
+}
+
+.chat-modal__error {
+    font-size: 12px;
+    color: #e74c3c;
+    min-height: 16px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Кнопка отправки */
+.chat-modal__submit {
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-accent), #d4a574);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    box-shadow: 0 6px 24px rgba(198, 161, 91, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-modal__submit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #d4a574, var(--color-accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.chat-modal__submit span,
+.chat-modal__submit svg {
+    position: relative;
+    z-index: 1;
+}
+
+.chat-modal__submit svg {
+    transition: transform 0.3s ease;
+}
+
+.chat-modal__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(198, 161, 91, 0.5);
+}
+
+.chat-modal__submit:hover::before {
+    opacity: 1;
+}
+
+.chat-modal__submit:hover svg {
+    transform: translateX(4px) rotate(-15deg);
+}
+
+.chat-modal__submit:active {
+    transform: translateY(0);
+}
+
+.chat-modal__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Сообщение об успехе */
+.chat-modal__success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding: 32px 16px;
+}
+
+.chat-modal__success.show {
+    display: flex;
+}
+
+.chat-modal__success svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.chat-modal__success h3 {
+    font-size: 18px;
+    color: var(--color-primary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.chat-modal__success p {
+    font-size: 13px;
+    color: rgba(45, 45, 45, 0.7);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Скрыть форму при показе успеха */
+.chat-modal__form.hidden {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .chat-modal {
+        padding: 0;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .chat-modal__content {
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        max-height: 90vh;
+        transform: translateY(100%);
+    }
+
+    .chat-modal.active .chat-modal__content {
+        transform: translateY(0);
+    }
+
+    .chat-modal__header {
+        padding: 14px;
+    }
+
+    .chat-modal__avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-modal__manager-name {
+        font-size: 13px;
+    }
+
+    .chat-modal__manager-status {
+        font-size: 11px;
+    }
+
+    .chat-modal__close-header {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-modal__body {
+        padding: 14px;
+    }
+
+    .chat-modal__form {
+        gap: 12px;
+    }
+
+    .chat-modal__input,
+    .chat-modal__textarea {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .chat-modal__textarea {
+        min-height: 90px;
+    }
+
+    .chat-modal__submit {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+
+    .chat-modal__success {
+        padding: 30px 18px;
+    }
+
+    .chat-modal__success svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-modal__success h3 {
+        font-size: 18px;
+    }
+
+    .chat-modal__success p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-modal__content {
+        border-radius: 20px 20px 0 0;
+        max-height: 95vh;
+    }
+
+    .chat-modal__header {
+        padding: 14px;
+    }
+
+    .chat-modal__avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .chat-modal__manager-name {
+        font-size: 13px;
+    }
+
+    .chat-modal__manager-status {
+        font-size: 11px;
+    }
+
+    .chat-modal__close-header {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-modal__body {
+        padding: 18px 16px;
+    }
+
+    .chat-modal__form {
+        gap: 12px;
+    }
+
+    .chat-modal__input,
+    .chat-modal__textarea {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+
+    .chat-modal__textarea {
+        min-height: 80px;
+    }
+
+    .chat-modal__submit {
+        padding: 11px 18px;
+        font-size: 13px;
+    }
+
+}
+
+/* Анимация появления */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}

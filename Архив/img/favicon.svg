@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#1E1E1E"/>
+  <!-- Кресло сбоку: спинка + сиденье + ножки -->
+  <path d="M8 20h16v1.5H8V20z" fill="#C6A15B"/>
+  <path d="M9 20V12h2v8M21 20V12h-2v8" fill="#C6A15B"/>
+  <path d="M9 12h14v2H9v-2z" fill="#C6A15B"/>
+  <path d="M14 12V8h4v4" fill="#C6A15B"/>
+</svg>

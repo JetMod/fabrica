@@ -1,0 +1,379 @@
+/* ===================================
+   Модальное окно обратной связи
+   =================================== */
+
+.callback-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.callback-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.callback-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.callback-modal__content {
+    position: relative;
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.callback-modal.active .callback-modal__content {
+    transform: scale(1) translateY(0);
+}
+
+/* Кнопка закрытия */
+.callback-modal__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(45, 45, 45, 0.05);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--color-primary);
+    z-index: 10;
+}
+
+.callback-modal__close:hover {
+    background: rgba(45, 45, 45, 0.1);
+    transform: rotate(90deg);
+}
+
+.callback-modal__close:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* Заголовок */
+.callback-modal__header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.callback-modal__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+}
+
+.callback-modal__subtitle {
+    font-size: 15px;
+    color: rgba(45, 45, 45, 0.7);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Форма */
+.callback-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.callback-modal__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.callback-modal__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.callback-modal__input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 15px;
+    color: var(--color-primary);
+    background: var(--color-white);
+    border: 2px solid rgba(45, 45, 45, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.callback-modal__input::placeholder {
+    color: rgba(45, 45, 45, 0.4);
+}
+
+.callback-modal__input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 20px rgba(198, 161, 91, 0.2);
+    transform: translateY(-1px);
+}
+
+.callback-modal__input.error {
+    border-color: #e74c3c;
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.2);
+}
+
+.callback-modal__error {
+    font-size: 13px;
+    color: #e74c3c;
+    min-height: 18px;
+    display: block;
+}
+
+/* Кнопка отправки */
+.callback-modal__submit {
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d2d2d;
+    background: linear-gradient(135deg, var(--color-accent), #d4a574);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 8px 30px rgba(198, 161, 91, 0.4);
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.callback-modal__submit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #d4a574, var(--color-accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.callback-modal__submit span,
+.callback-modal__submit svg {
+    position: relative;
+    z-index: 1;
+}
+
+.callback-modal__submit svg {
+    transition: transform 0.3s ease;
+}
+
+.callback-modal__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(198, 161, 91, 0.5);
+}
+
+.callback-modal__submit:hover::before {
+    opacity: 1;
+}
+
+.callback-modal__submit:hover svg {
+    transform: translateX(4px);
+}
+
+.callback-modal__submit:active {
+    transform: translateY(0);
+}
+
+.callback-modal__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Политика конфиденциальности */
+.callback-modal__privacy {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(45, 45, 45, 0.5);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.callback-modal__privacy a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.callback-modal__privacy a:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+/* Сообщение об успехе */
+.callback-modal__success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.callback-modal__success.show {
+    display: flex;
+}
+
+.callback-modal__success svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.callback-modal__success h3 {
+    font-size: 22px;
+    color: var(--color-primary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.callback-modal__success p {
+    font-size: 15px;
+    color: rgba(45, 45, 45, 0.7);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Скрыть форму при показе успеха */
+.callback-modal__form.hidden {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .callback-modal {
+        padding: 10px;
+    }
+
+    .callback-modal__content {
+        padding: 32px 24px;
+        border-radius: 16px;
+    }
+
+    .callback-modal__close {
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .callback-modal__title {
+        font-size: 24px;
+    }
+
+    .callback-modal__subtitle {
+        font-size: 14px;
+    }
+
+    .callback-modal__form {
+        gap: 20px;
+    }
+
+    .callback-modal__input {
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+
+    .callback-modal__submit {
+        padding: 14px 28px;
+        font-size: 14px;
+    }
+
+    .callback-modal__success svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .callback-modal__success h3 {
+        font-size: 20px;
+    }
+
+    .callback-modal__success p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .callback-modal__content {
+        padding: 28px 20px;
+    }
+
+    .callback-modal__title {
+        font-size: 22px;
+    }
+
+    .callback-modal__subtitle {
+        font-size: 13px;
+    }
+
+    .callback-modal__form {
+        gap: 18px;
+    }
+
+    .callback-modal__input {
+        padding: 13px 16px;
+        font-size: 13px;
+    }
+
+    .callback-modal__submit {
+        padding: 13px 24px;
+        font-size: 13px;
+    }
+}
+
+/* Анимация появления */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}

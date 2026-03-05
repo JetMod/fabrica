@@ -1,0 +1,1033 @@
+/* ===================================
+   Страница Офис - Премиальный стиль
+   =================================== */
+
+/* Hero секция */
+.office-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 82px 0 100px;
+    overflow: hidden;
+}
+
+.office-hero__background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0F0F0F 0%, #1E1E1E 50%, #2d2d2d 100%);
+    z-index: 0;
+}
+
+.office-hero__background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(198, 161, 91, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(198, 161, 91, 0.15) 0%, transparent 50%);
+    opacity: 0.8;
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+.office-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(198,161,91,0.08)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.4;
+}
+
+.office-hero__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(198, 161, 91, 0.03) 2px, rgba(198, 161, 91, 0.03) 4px);
+    opacity: 0.5;
+}
+
+.office-hero__gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(198, 161, 91, 0.05) 100%);
+}
+
+.office-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.office-hero__content {
+    color: var(--color-white);
+    max-width: 650px;
+}
+
+.office-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+    padding: 10px 20px;
+    background: rgba(198, 161, 91, 0.12);
+    border: 1px solid rgba(198, 161, 91, 0.3);
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.office-hero__badge-icon {
+    display: flex;
+    align-items: center;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.office-hero__title {
+    font-size: clamp(48px, 7vw, 62px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    letter-spacing: -2px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.office-hero__title-line {
+    display: block;
+}
+
+.office-hero__title-line--accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #d4a574 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.office-hero__subtitle {
+    font-size: clamp(17px, 2.2vw, 22px);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 48px;
+    max-width: 580px;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.office-hero__actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.office-hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.office-hero__button svg {
+    transition: transform 0.3s ease;
+}
+
+.office-hero__button:hover svg {
+    transform: translateX(4px);
+}
+
+.office-hero__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
+
+.office-hero__feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.office-hero__feature svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+/* Визуальная часть */
+.office-hero__visual {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+}
+
+.office-hero__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+.office-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.office-hero__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(198, 161, 91, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.office-hero__decorative {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.office-hero__decorative-item {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(198, 161, 91, 0.15), rgba(198, 161, 91, 0.05));
+    animation: float 6s ease-in-out infinite;
+}
+
+.office-hero__decorative-item--1 {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    right: -50px;
+    animation-delay: 0s;
+}
+
+.office-hero__decorative-item--2 {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    right: -30px;
+    animation-delay: 2s;
+}
+
+.office-hero__decorative-item--3 {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    right: 10%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.office-hero__scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    animation: bounce 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* О компании */
+.office-about {
+    padding: 100px 0;
+    background: var(--color-white);
+    position: relative;
+}
+
+.office-about__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.office-about__content {
+    max-width: 600px;
+}
+
+.office-about__badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.office-about__title {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+}
+
+.office-about__text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(30, 30, 30, 0.8);
+    margin-bottom: 24px;
+}
+
+.office-about__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(45, 45, 45, 0.1);
+}
+
+.office-about__stat {
+    text-align: center;
+}
+
+.office-about__stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.office-about__stat-label {
+    font-size: 14px;
+    color: rgba(30, 30, 30, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.office-about__image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.office-about__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Преимущества */
+.office-benefits {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f3ef 0%, #faf8f5 100%);
+    position: relative;
+}
+
+.office-benefits__header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.office-benefits__badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.office-benefits__title {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.office-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.office-benefit {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(198, 161, 91, 0.1);
+}
+
+.office-benefit:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(198, 161, 91, 0.15);
+    border-color: rgba(198, 161, 91, 0.3);
+}
+
+.office-benefit__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(198, 161, 91, 0.1), rgba(198, 161, 91, 0.05));
+    border-radius: 12px;
+    margin-bottom: 24px;
+    color: var(--color-accent);
+}
+
+.office-benefit__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.office-benefit__text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(30, 30, 30, 0.7);
+}
+
+/* Каталог */
+.office-catalog {
+    padding: 100px 0;
+    background: var(--color-white);
+}
+
+.office-catalog__header {
+    text-align: center;
+    margin-bottom: 64px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.office-catalog__badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.office-catalog__title {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.office-catalog__subtitle {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(30, 30, 30, 0.7);
+}
+
+.office-catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.office-category {
+    display: block;
+    background: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    border: 1px solid rgba(198, 161, 91, 0.1);
+}
+
+.office-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(198, 161, 91, 0.2);
+    border-color: rgba(198, 161, 91, 0.3);
+}
+
+.office-category__image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f3ef, #faf8f5);
+}
+
+.office-category__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.office-category:hover .office-category__img {
+    transform: scale(1.1);
+}
+
+.office-category__content {
+    padding: 32px;
+}
+
+.office-category__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.office-category__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(30, 30, 30, 0.7);
+    margin-bottom: 16px;
+}
+
+.office-category__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.office-category:hover .office-category__link {
+    gap: 12px;
+}
+
+/* Блок с адресом и контактами */
+.office-location {
+    padding: 100px 0;
+    background: var(--color-white);
+    position: relative;
+}
+
+.office-location__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.office-location__content {
+    max-width: 600px;
+}
+
+.office-location__badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.office-location__title {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.office-location__subtitle {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(30, 30, 30, 0.7);
+    margin-bottom: 48px;
+}
+
+.office-location__info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.office-location__item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.office-location__icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(198, 161, 91, 0.1), rgba(198, 161, 91, 0.05));
+    border-radius: 12px;
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+.office-location__details {
+    flex: 1;
+}
+
+.office-location__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(30, 30, 30, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.office-location__value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.office-location__value--link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.office-location__value--link:hover {
+    color: var(--color-accent);
+    gap: 12px;
+}
+
+.office-location__value--link svg {
+    transition: transform 0.3s ease;
+}
+
+.office-location__value--link:hover svg {
+    transform: translate(2px, -2px);
+}
+
+.office-location__actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.office-location__actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.office-location__actions .button svg {
+    transition: transform 0.3s ease;
+}
+
+.office-location__actions .button:hover svg {
+    transform: translateX(4px);
+}
+
+.office-location__map {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #f5f3ef, #faf8f5);
+    min-height: 400px;
+}
+
+.office-location__map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .office-location__inner {
+        gap: 60px;
+    }
+    .office-about__inner {
+        gap: 60px;
+    }
+
+    .office-benefits__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .office-catalog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .office-hero {
+        min-height: auto;
+        padding: 120px 0 80px;
+    }
+
+    .office-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .office-hero__visual {
+        min-height: 400px;
+        order: -1;
+    }
+
+    .office-hero__content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .office-hero__actions {
+        justify-content: center;
+    }
+
+    .office-hero__features {
+        justify-content: center;
+    }
+
+    .office-about {
+        padding: 80px 0;
+    }
+
+    .office-location {
+        padding: 80px 0;
+    }
+
+    .office-location__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .office-location__map {
+        order: -1;
+    }
+
+    .office-about__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .office-about__stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .office-benefits {
+        padding: 80px 0;
+    }
+
+    .office-benefits__grid {
+        gap: 32px;
+    }
+
+    .office-catalog {
+        padding: 80px 0;
+    }
+
+    .office-catalog__grid {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .office-hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+
+    .office-hero__inner {
+        gap: 40px;
+    }
+
+    .office-hero__visual {
+        min-height: 350px;
+    }
+
+    .office-hero__actions {
+        flex-direction: column;
+    }
+
+    .office-hero__actions .button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .office-hero__features {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .office-hero__decorative-item--1,
+    .office-hero__decorative-item--2,
+    .office-hero__decorative-item--3 {
+        display: none;
+    }
+
+    .office-about {
+        padding: 60px 0;
+    }
+
+    .office-about__stats {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 32px;
+    }
+
+    .office-benefits {
+        padding: 60px 0;
+    }
+
+    .office-benefits__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .office-benefit {
+        padding: 32px 24px;
+    }
+
+    .office-catalog {
+        padding: 60px 0;
+    }
+
+    .office-catalog__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .office-category__image {
+        height: 240px;
+    }
+
+    .office-category__content {
+        padding: 24px;
+    }
+
+    .office-location {
+        padding: 60px 0;
+    }
+
+    .office-location__inner {
+        gap: 40px;
+    }
+
+    .office-location__info {
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .office-location__item {
+        gap: 16px;
+    }
+
+    .office-location__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .office-location__actions {
+        flex-direction: column;
+    }
+
+    .office-location__actions .button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .office-hero {
+        padding: 80px 0 50px;
+    }
+
+    .office-hero__visual {
+        min-height: 300px;
+    }
+
+    .office-hero__scroll-indicator {
+        display: none;
+    }
+
+    .office-about {
+        padding: 50px 0;
+    }
+
+    .office-benefits {
+        padding: 50px 0;
+    }
+
+    .office-benefit {
+        padding: 24px 20px;
+    }
+
+    .office-catalog {
+        padding: 50px 0;
+    }
+
+    .office-category__image {
+        height: 200px;
+    }
+
+    .office-location {
+        padding: 50px 0;
+    }
+
+    .office-location__title {
+        font-size: 28px;
+    }
+
+    .office-location__subtitle {
+        font-size: 15px;
+        margin-bottom: 32px;
+    }
+
+    .office-location__info {
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .office-location__icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .office-location__value {
+        font-size: 16px;
+    }
+}
+
+/* Анимация появления */
+.office-about.animate-on-scroll:not(.animated),
+.office-benefits.animate-on-scroll:not(.animated),
+.office-catalog.animate-on-scroll:not(.animated),
+.office-location.animate-on-scroll:not(.animated) {
+    opacity: 0;
+}
+
+.office-about.animate-on-scroll.animated,
+.office-benefits.animate-on-scroll.animated,
+.office-catalog.animate-on-scroll.animated,
+.office-location.animate-on-scroll.animated {
+    opacity: 1;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
