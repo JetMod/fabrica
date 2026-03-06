@@ -120,7 +120,7 @@
 }
 
 .footer__logo-img {
-    height: 40px;
+    height: 50px;
     width: auto;
     opacity: 0.9;
     transition: opacity 0.3s ease;
@@ -419,7 +419,7 @@
     }
 
     .footer__logo-img {
-        height: 34px;
+        height: 42px;
     }
 
     .footer__description {
@@ -544,7 +544,7 @@
     }
 
     .footer__logo-img {
-        height: 30px;
+        height: 38px;
     }
 
     .footer__description {

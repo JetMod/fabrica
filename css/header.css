@@ -225,7 +225,7 @@
 }
 
 .header__logo-img {
-    height: 42px;
+    height: 52px;
     width: auto;
     position: relative;
     z-index: 1;
@@ -971,7 +971,7 @@ a.header__tagline:hover {
 }
 
 .header__mobile-logo-img {
-    height: 36px;
+    height: 44px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -1644,7 +1644,7 @@ a.header__tagline:hover {
     }
     
     .header__logo-img {
-        height: 38px;
+        height: 46px;
     }
 }
 
@@ -1792,7 +1792,7 @@ a.header__tagline:hover {
     }
     
     .header__logo-img {
-        height: 36px;
+        height: 44px;
     }
     
     .header__logo::after {
@@ -1806,7 +1806,7 @@ a.header__tagline:hover {
     }
     
     .header__logo-img {
-        height: 40px;
+        height: 48px;
     }
     
     .header__mobile-header {
@@ -1821,7 +1821,7 @@ a.header__tagline:hover {
     }
     
     .header__mobile-logo-img {
-        height: 32px;
+        height: 40px;
         max-width: 100%;
         object-fit: contain;
     }
@@ -2003,7 +2003,7 @@ a.header__tagline:hover {
 }
 
 .header.scrolled .header__logo-img {
-    height: 38px;
+    height: 46px;
 }
 
 /* Эффект pulse для иконок */

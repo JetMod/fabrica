@@ -52,5 +52,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    console.log('✓ ФАБРИКА интерьера - сайт загружен');
+    console.log('✓ ФАБРИКА интерьеров - сайт загружен');
 });
